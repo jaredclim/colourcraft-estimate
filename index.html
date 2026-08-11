@@ -75,7 +75,9 @@ header{position:sticky;top:0;background:var(--white);border-bottom:1px solid var
 
 /* quote promise */
 .promise{background:var(--off);border-top:4px solid var(--gold)}
-.promise-in{display:flex;gap:34px;align-items:center;padding:38px 0;flex-wrap:wrap}
+.promise-in{display:flex;gap:34px;align-items:center;justify-content:space-between;padding:38px 0;flex-wrap:wrap}
+.promise-in > div:first-child{max-width:680px}
+.promise .btn{flex-shrink:0}
 .promise h2{font-size:26px;margin-bottom:8px}
 .promise p{color:var(--text-soft);max-width:640px}
 .promise .season{margin-top:10px;font-weight:600;color:var(--dark)}
@@ -164,7 +166,11 @@ section h2{font-size:32px;margin-bottom:12px}
 .final p{color:#d9d4c8;margin-bottom:26px;font-size:18px}
 .final .cta-row{justify-content:center}
 .book-frame{background:var(--white);border-radius:12px;overflow:hidden;max-width:860px;margin:0 auto;box-shadow:0 8px 40px rgba(0,0,0,.35)}
-.book-frame iframe{display:block;width:100%;height:1750px;border:0}
+.book-frame iframe{display:block;width:100%;height:2500px;border:0}
+.book-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;font-size:14.5px;font-weight:600;color:#f2f2f2;margin-bottom:26px}
+.book-trust span::before{content:"✓";color:var(--gold);font-weight:800;margin-right:7px}
+#book{scroll-margin-top:120px}
+#work,#reviews,#promise,#cost,#faq{scroll-margin-top:110px}
 .final .alt-line{margin-top:22px;font-size:15.5px;color:#b8b2a4}
 .final .alt-line a{color:var(--gold);font-weight:700}
 
@@ -181,7 +187,8 @@ footer b{color:#d8d3c6}
 .sticky-cta{display:none}
 
 @media (max-width: 760px){
-  .head-phone{display:none}
+  .head-right .btn{display:none}
+  .head-phone{font-size:15px}
   .serving{display:none}
   .anchors{display:none}
   .hero h1{font-size:33px}
@@ -201,6 +208,9 @@ footer b{color:#d8d3c6}
   .sticky-cta .book{flex:1 1 auto}
   .cta-mid{flex-direction:column;align-items:flex-start}
   .cta-mid .btn{width:100%}
+  .book-frame iframe{height:3050px}
+  .head-left img{height:44px}
+  .promise .btn{width:100%}
 }
 </style>
 </head>
@@ -234,12 +244,12 @@ footer b{color:#d8d3c6}
     <div class="hero-in">
       <div class="eyebrow">Your Home, Painted Right.</div>
       <h1>House Painters in <span>Richmond &amp; Delta</span>, BC</h1>
-      <p>Fixed written quotes. A 2-year written warranty. Local crews who show up when they say they will.</p>
+      <p>Interior and exterior painting with fixed written quotes, a 2-year written warranty, and local crews who show up when they say they will.</p>
       <div class="cta-row">
         <a class="btn big" href="#book">Book Your Free Estimate</a>
         <a class="btn big ghost" href="tel:18669927238">Call <span class="ccp-phone-swap">1-866-99-CRAFT</span></a>
       </div>
-      <p class="cta-note">Booking takes about a minute. No obligation, no pressure to decide.</p>
+      <p class="cta-note">Free, no obligation, and no pressure to decide anything on the spot.</p>
       <div class="trust-strip">
         <span>4.9★ Google Rating</span>
         <span>2-Year Written Warranty</span>
@@ -257,8 +267,9 @@ footer b{color:#d8d3c6}
         <h2>Your written quote is your price.</h2>
         <p>We visit your home, walk the project with you, and you have your detailed written quote, with photos, within 24 hours. The price you approve is the price you pay. No sign-today discounts, no pressure, no surprises at the end.</p>
         <p style="margin-top:10px">When we give a timeline, we hold to it. When we say we will call, we call. You should never have to chase your own painter for an update.</p>
-        <p class="season">Exterior slots are booking up ahead of the fall rain. Booking your estimate now holds your place.</p>
+        <p class="season">Exterior slots are booking up ahead of the fall rain. The earlier your estimate, the earlier your project can be scheduled.</p>
       </div>
+      <a class="btn big" href="#book">Book Your Free Estimate</a>
     </div>
   </div>
 </div>
@@ -267,7 +278,7 @@ footer b{color:#d8d3c6}
   <div class="wrap">
     <div class="sec-eyebrow">Recent Projects</div>
     <h2>Painted here, in your neighbourhood</h2>
-    <p class="lede">Real Richmond and Delta homes, painted by our crews this season.</p>
+    <p class="lede">Real Richmond and Delta homes, painted by our crews.</p>
     <div class="grid3">
       <div class="card">
         <div class="ba">
@@ -309,7 +320,7 @@ footer b{color:#d8d3c6}
         </div>
       </div>
     </div>
-    <p class="lede" style="margin-top:18px;margin-bottom:0;font-size:15px">Project values as published on our project pages. Every home is quoted individually, in writing.</p>
+    <p class="lede" style="margin-top:18px;margin-bottom:0;font-size:15px">Every home is quoted individually, in writing.</p>
   </div>
 </section>
 
@@ -324,25 +335,25 @@ footer b{color:#d8d3c6}
         <span class="praised">Praised: the estimate experience</span>
         <p>"The level of professionalism dealing with Jared was 5/5. He was respectful, punctual and did an extremely thorough estimate complete with photos, detailed description of work to be completed... His service inspires confidence from the start."</p>
         <div class="who">Marlene K.</div>
-        <div class="where">Richmond &amp; Delta · Google review</div>
+        <div class="where">Google review</div>
       </div>
       <div class="rev">
         <div class="stars">★★★★★</div>
         <span class="praised">Praised: quality over price</span>
         <p>"They painted the outside of my house and did a great job. I was very impressed with the thoroughness of the assessment, the constant communication on the job... This company wasn't the cheapest quote I got but the quality of the work was great!"</p>
         <div class="who">Sheila D.</div>
-        <div class="where">Richmond &amp; Delta · Google review</div>
+        <div class="where">Google review</div>
       </div>
       <div class="rev">
         <div class="stars">★★★★★</div>
         <span class="praised">Praised: clean site + communication</span>
         <p>"The crew and management were very professional. The workspace was kept clean and every thing was put back in place when finished... Management kept a very open communication line and the pricing was competitive. I would strongly recommend Jared, Chris and their team."</p>
         <div class="who">Mumtaz N.</div>
-        <div class="where">Richmond &amp; Delta · Google review</div>
+        <div class="where">Steveston · Google review</div>
       </div>
     </div>
     <div class="cta-mid">
-      <p>Want a quote like the ones they're describing?<span class="sub">Detailed, written, with photos. Yours free.</span></p>
+      <p>Get the same kind of quote for your home.<span class="sub">Detailed, written, with photos. Free, with no obligation.</span></p>
       <a class="btn" href="#book">Book Your Free Estimate</a>
     </div>
   </div>
@@ -421,12 +432,12 @@ footer b{color:#d8d3c6}
       <div class="step">
         <div class="num">01</div>
         <h3>Free On-Site Estimate</h3>
-        <p>Book online in about a minute. We visit, walk the project with you, and your written quote arrives within 24 hours.</p>
+        <p>Request your estimate online or by phone. We visit, walk the project with you, and your written quote arrives within 24 hours.</p>
       </div>
       <div class="step">
         <div class="num">02</div>
         <h3>Plan &amp; Prepare</h3>
-        <p>We schedule around your availability, protect your property, and do the prep properly. Washing, sanding and priming before any paint goes on.</p>
+        <p>We schedule around your availability and do the prep properly: washing, sanding and priming before any paint goes on. Haven't picked colours yet? We'll guide you.</p>
       </div>
       <div class="step">
         <div class="num">03</div>
@@ -463,6 +474,10 @@ footer b{color:#d8d3c6}
       <p>We come to your home, walk the project with you, and answer your questions. You get a detailed written quote with photos. There's no obligation and no pressure to decide on the spot.</p>
     </details>
     <details>
+      <summary>Do you paint interiors too?</summary>
+      <p>Yes. Interior, exterior and cabinet painting across Richmond and Delta. The estimate and the written quote work exactly the same way.</p>
+    </details>
+    <details>
       <summary>Who will actually be painting my home?</summary>
       <p>A trained, uniformed Colour Craft crew with a crew leader running your job site. The people in your home are experienced, respectful and accountable. They arrive on time, introduce themselves, and take care with your property.</p>
     </details>
@@ -480,11 +495,17 @@ footer b{color:#d8d3c6}
 <section class="final" id="book">
   <div class="wrap">
     <h2>Book your <span>free estimate</span></h2>
-    <p>Pick a time that works for you. Takes about a minute, and there's no obligation.</p>
-    <div class="book-frame">
-      <iframe id="dj-form" src="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af" loading="lazy" title="Book your free painting estimate"></iframe>
+    <p>Tell us about your project and the estimate times that work for you. We'll confirm your appointment.</p>
+    <div class="book-trust">
+      <span>4.9★ Google Rating</span>
+      <span>2-Year Written Warranty</span>
+      <span>WCB + $5M Insured</span>
+      <span>Fixed Written Quotes</span>
     </div>
-    <p class="alt-line">Prefer to talk it through first? Call <a href="tel:18669927238"><span class="ccp-phone-swap">1-866-99-CRAFT</span></a></p>
+    <div class="book-frame">
+      <iframe id="dj-form" src="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af" title="Book your free painting estimate"></iframe>
+    </div>
+    <p class="alt-line">Prefer to talk it through first? Call <a href="tel:18669927238"><span class="ccp-phone-swap">1-866-99-CRAFT</span></a> or email <a href="mailto:jared.lim@colourcraftpainting.com">jared.lim@colourcraftpainting.com</a></p>
   </div>
 </section>
 
@@ -500,16 +521,38 @@ footer b{color:#d8d3c6}
 </footer>
 
 <script>
-  // Carry ad-click parameters through to the booking form so the click can be attributed.
   (function(){
+    // Carry ad-click parameters through to the booking form so the click can be attributed.
     var params = new URLSearchParams(location.search);
     var keep = [];
     params.forEach(function(v,k){
       if (/^(gclid|gbraid|wbraid|utm_\w+)$/i.test(k)) keep.push(k + '=' + encodeURIComponent(v));
     });
-    if (keep.length) {
-      var f = document.getElementById('dj-form');
-      f.src = f.src + '&' + keep.join('&');
+    var f = document.getElementById('dj-form');
+    if (keep.length) f.src = f.src + '&' + keep.join('&');
+
+    // Geo headline match: ?geo=ladner|tsawwassen|steveston|richmond|delta swaps the H1 location.
+    var geo = (params.get('geo') || '').toLowerCase();
+    var geoNames = {ladner:'Ladner', tsawwassen:'Tsawwassen', steveston:'Steveston', richmond:'Richmond', delta:'Delta'};
+    if (geoNames[geo]) {
+      var h1span = document.querySelector('.hero h1 span');
+      if (h1span) h1span.textContent = geoNames[geo];
+    }
+
+    // Engagement event when a visitor heads to the booking form (not a conversion).
+    document.querySelectorAll('a[href="#book"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        if (typeof gtag === 'function') gtag('event', 'book_cta_click');
+      });
+    });
+
+    // Hide the mobile sticky bar while the booking section is on screen.
+    var bar = document.querySelector('.sticky-cta');
+    var book = document.getElementById('book');
+    if (bar && book && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries){
+        bar.style.display = entries[0].isIntersecting ? 'none' : '';
+      }).observe(book);
     }
   })();
 </script>
