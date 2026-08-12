@@ -148,3 +148,31 @@ intent ads.
   Measured CLS on the live landing page was 0.0007, so this is not a live defect.
 - Mobile H1 is 38px against the reference's 48px. Deliberate: 48px overpowered
   the fold on the longer geo-bearing headlines these pages use.
+
+## Mini-site review round (2026-08-11, Jared's 10-pass directive)
+
+Copy conflicts resolved by one rule: **the site's own verbatim copy wins over
+reviewer taste.** The ICP panel wanted rewrites of the service intros, the
+"best painters near me" FAQ headings, the "We'd Love to Hear From You" contact
+heading and the "Craftsmanship & Care" hero line. All are colourcraftpainting.com
+verbatim, so they stay. Flagged to Jared as site-level suggestions for Brad, not
+changed here.
+
+Applied instead (not site copy, or factually wrong):
+- Reviews page framing sentence was FALSE (claimed all reviews below were
+  territory reviews above a Philadelphia section) — rewritten honestly, and a
+  markup bug orphaning the Philadelphia cards fixed.
+- Rating qualified "for Colour Craft" at first mention on every page; "verified"
+  dropped (Google confers no such status).
+- Seafair testimonial attribution: "Raymond" on both pages that quote it — the
+  quote lives on Raymond's own project page, satisfying the attribution rule.
+- Index owner bio shortened to two lines; the full bio lives on Why Us, so the
+  two pages stop reading as copies.
+- Home "safest move is booking it now" softened: the one hard-sell line on a
+  no-pressure site.
+- Home project-card lede no longer promises costs the cards no longer show;
+  points to Our Work, which carries them (price-context rule: many projects
+  with prices = calibration; few areas with prices = area pricing).
+- Two weakest gallery tiles on Our Work swapped for stronger afters from the
+  same projects' published sets.
+- Tap targets: split-band inline links and band buttons to 44px minimum.
