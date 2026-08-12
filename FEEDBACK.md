@@ -1,5 +1,21 @@
 # Iteration Log — colourcraft-estimate LP
 
+## Round 5 — FINAL (deployed 2026-08-11 evening)
+
+**Panel:** fresh-eyes avatar review (final-mile) + competitor re-verdict. Competitor verdict: **wins 5 of 6 head-to-heads, ties Hemlock** — and this round closed Hemlock's one remaining edge (pricing education) with the real-ranges list + the vague-vs-real quote comparison table (all rows restate existing verified claims; no invented numbers).
+
+**Applied:** cost section rebuilt (recent-projects price list up top, +2 honest drivers, "How to tell a real quote from a vague one" 5-row table, "Hold every painter to this standard, including us" close); narrative reorder — process above cost so the dollar-anchored CTA sits closest to the booking ask; anchor nav reordered to match page flow; Steveston (true tan→blue transformation) now leads the project grid, Seafair runs as a single hero after (its before/after pair showed no visible change — proof that proves nothing poisons the device); Steveston after recropped onto the house; repetition trimmed (fixed-price 4→2 tellings, no-pressure 6→3); step 01 stopped retelling the estimate mechanics; thank-you.html reframed honestly ("Your estimate request is in / we'll confirm your time" — was claiming "booked / your chosen time"); crew-at-work photo under the process steps; html background #111 (mobile white strip under footer).
+
+**Final state:** 5 deployed versions, 10 independent expert reviews consumed (CRO ×2, competitor judge ×2, avatar panel ×2, design critique, QA verify, 2 research sweeps of 7 sites). Voice scan clean: 0 em-dashes in body copy, "slots" not "spots", no AI filler, stars-first social proof. Stopped iterating because every remaining finding is gated on Jared, not on more review.
+
+**PARKED — needs Jared (in rough priority):**
+1. Google Business Profile reviews URL → link the "4.9 across 187+" claim (every reviewer's top trust gap).
+2. DripJobs ads-form config batch (one session): duplicate the form for ads; Province/Postal labels (currently "State"/"Zip"); form title shown to clients (currently internal "Scheduling - Richmond / Delta"); "How did you hear about us?" required 15-option dropdown (gclid passthrough already answers it); red validation text visible before typing; powered-by footer; set redirect to https://colourcraft-estimate.vercel.app/thank-you.html.
+3. Google Ads: confirm the "Book appointment" conversion URL rule matches thank-you on the LP domain too.
+4. Real-data pack (each strengthens the page, none invented meanwhile): Steveston project duration; 1-2 real R&D interior project values (needed before interior ad groups); deposit/payment terms FAQ (the burned shopper's unanswered #1: "how much do I pay and when"); warranty response practice; evening/weekend estimate availability; how to present Chris (Mumtaz's review names him, page only introduces Jared).
+5. Seasonal fall-rain lines: swap ~October.
+6. Later: ads split-test LP vs location page; estimate.colourcraftpainting.com DNS via Brad; hero/process video (real footage only).
+
 Sacred-Ways-style loop commissioned 2026-08-11: version → full review → capture feedback → improve, ~10 rounds.
 Every round scored on 3 criteria:
 1. **Competitor superiority** — better than every single competitor (Pro Works, Hemlock, Warline, Holloway, CertaPro, Student Works)?
