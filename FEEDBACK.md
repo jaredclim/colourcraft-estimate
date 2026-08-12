@@ -28,3 +28,13 @@ CRO audit of v1: 40/58. Research findings applied:
 - Copy fixes: "spots"→"slots" (copy bank rule), dropped "verified" from review count, em-dash removed from warranty label.
 
 Known open (business decisions, NOT invented): 2-yr vs competitors' 3-yr warranty (Pro Works/Hemlock/Holloway/StudentWorks all claim 3); no offer/discount (deliberate anti-pressure positioning); Google review profile link (need URL from Jared); site 187+ vs /book 200+ count mismatch; dedicated DJ ads form + redirect to LP thank-you.html (Jared action in DripJobs).
+
+---
+
+## Round 3 — first review panel (deployed 2026-08-11 pm)
+
+**Panel results:** CRO re-score 54/58 (from 40/58). Competitor judge verdict: LP now wins or ties all 6 head-to-heads (decisively vs Pro Works/Student Works/Warline-for-R&D; Hemlock's pricing-education depth is the one remaining dimension a competitor owns). Avatar panel: fold passes 5-second test for all 3 personas; hero van photo + Franco warranty quote + published prices + burned-before section flagged as strongest assets.
+
+**Critical catch (CRO + avatar agents independently):** embedded form content is 2,362px desktop / 2,792px mobile but iframe was fixed at 1,750px, hiding the Submit button entirely. Fixed: 2500px desktop / 3050px mobile.
+
+**Applied this round:** scroll-margin on anchors (headings were landing behind sticky header); iframe eager-load (was blank on fast CTA clicks); sticky bar hides while booking section on screen (was covering time chips + pointing at itself); removed all three "about a minute" claims (form = 11 required fields, request not calendar — honest reframe); Raymond before swapped to matching front elevation; interiors surfaced (hero sub + new FAQ) — was exterior-only page for interior-intent clicks; colour guidance lifted from FAQ into step 02; trust-strip echo above booking form; promise band got right-column CTA (was half-empty on desktop); mobile header shows phone instead of a redundant third gold CTA; review location labels made honest (only Mumtaz/Steveston verifiable, others "Google review"); brand-voice pass (removed "holds your place" overclaim, "this season" unverified claim, AI-cute mid-CTA line); book_cta_click gtag event; ?geo=ladner|tsawwassen|steveston|richmond|delta H1 swap for ad-group message match; email fallback under booking form; images resized to display size.
