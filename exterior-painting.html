@@ -66,7 +66,7 @@ header{position:sticky;top:0;background:var(--white);border-bottom:1px solid var
 .nav-drop:hover .nav-menu,.nav-drop:focus-within .nav-menu,.nav-drop.open .nav-menu{display:flex}
 .nav-menu a{padding:10px 12px;border-radius:3px;text-transform:none;letter-spacing:normal;font-size:15px;font-weight:600}
 .nav-menu a:hover{background:var(--off)}
-.nav-toggle{display:none;background:none;border:0;cursor:pointer;color:var(--dark);padding:8px;margin:-8px}
+.nav-toggle{display:none;align-items:center;justify-content:center;min-width:44px;min-height:44px;background:none;border:0;cursor:pointer;color:var(--dark)}
 .mobile-nav{border-top:1px solid var(--border);background:var(--white);padding:8px 0 14px}
 .mobile-nav a{display:block;padding:13px 0;font-family:'Barlow',sans-serif;font-size:16px;font-weight:600;border-bottom:1px solid var(--border)}
 .mobile-nav a:last-child{border-bottom:none}
@@ -200,7 +200,7 @@ ul.two-col li:nth-last-child(-n+2){box-shadow:none}
 footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
 .foot-main{padding:56px 0}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px}
-.foot-grid img{height:64px;margin-bottom:14px}
+.foot-grid img{height:64px;width:auto;object-fit:contain;margin-bottom:14px}
 .foot-grid p{font-size:14px;line-height:24px;max-width:280px}
 .foot-grid h4{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:var(--white);margin-bottom:14px}
 .foot-grid a{display:flex;align-items:center;gap:8px;font-size:15px;line-height:20px;padding:11px 0;min-height:44px;color:rgba(255,255,255,.7)}
@@ -304,6 +304,7 @@ a.contact-row:hover{border-color:var(--gold)}
 .svc-hero.on-light .svc-hero-bg::after{background:linear-gradient(105deg,rgba(0,0,0,.72),rgba(0,0,0,.55) 55%,rgba(0,0,0,.25))}
 .svc-hero-in{position:relative;padding:128px 0 48px}
 .crumb{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:14px;line-height:20px;color:rgba(255,255,255,.6)}
+.crumb a{display:inline-flex;align-items:center;min-height:44px}
 .crumb a:hover{color:var(--gold)}
 .crumb .sep{color:rgba(255,255,255,.4)}
 .crumb .here{color:rgba(255,255,255,.8)}
@@ -349,7 +350,7 @@ a.contact-row:hover{border-color:var(--gold)}
 .split-cta .eyebrow{font-size:12px;letter-spacing:1.2px;margin-bottom:12px}
 .split-cta h2{color:var(--white);font-size:30px;line-height:36px;font-weight:900;margin-bottom:14px}
 .split-cta p{color:rgba(255,255,255,.8);font-size:14px;line-height:22.75px;margin-bottom:22px;max-width:640px}
-.split-cta a.inline{color:var(--gold);font-weight:600}
+.split-cta a.inline{color:var(--gold);font-weight:600;display:inline-block;padding:6px 0}
 .split-cta a.inline:hover{text-decoration:underline}
 .split-cta .btn.big{font-size:14px;font-weight:900;letter-spacing:.35px;border-radius:0;padding:12px 32px}
 .split-stats{background:var(--white);padding:56px 40px;display:flex;align-items:center;justify-content:center}
@@ -370,7 +371,7 @@ a.contact-row:hover{border-color:var(--gold)}
   .svc-hero{min-height:auto}
   .svc-hero-in{padding:56px 0 40px}
   .svc-hero-bg::after{background:linear-gradient(180deg,rgba(10,10,10,.74),rgba(10,10,10,.66) 55%,rgba(10,10,10,.8))}
-  .svc-hero h1{font-size:32px;line-height:36px}
+  .svc-hero h1{font-size:38px;line-height:42px}
   .crumb{font-size:13px}
   .svc-card{grid-template-columns:1fr;gap:20px}
   .svc-card:nth-child(even) .svc-card-img{order:0}
@@ -494,7 +495,7 @@ a.contact-row:hover{border-color:var(--gold)}
 
         <div class="svc-cards">
           <div class="svc-card">
-            <div class="svc-card-img"><img src="img/svc-ext-siding.webp" alt="Repainted white siding and trim on a Tsawwassen home, exterior painting by Colour Craft Painting" loading="lazy" width="760" height="507"></div>
+            <div class="svc-card-img"><img src="img/svc-ext-siding.webp" alt="Repainted white siding and trim on a Tsawwassen home, exterior painting by Colour Craft Painting" loading="lazy" width="760" height="1014"></div>
             <div>
               <h3>Siding Repair &amp; Painting</h3>
               <p>Compromised siding is corrected before painting to establish a uniform, paint-ready surface, so the paint bonds properly and the surface sheds water. We identify and repair damaged boards, fill gaps, caulk seams, and prime bare areas before applying the finish coat.</p>
@@ -512,7 +513,7 @@ a.contact-row:hover{border-color:var(--gold)}
           </div>
 
           <div class="svc-card">
-            <div class="svc-card-img"><img src="img/svc-ext-trim.webp" alt="Two-tone exterior with crisp white trim on a Steveston home, painted by Colour Craft Painting" loading="lazy" width="760" height="570"></div>
+            <div class="svc-card-img"><img src="img/svc-ext-trim.webp" alt="Two-tone exterior with crisp white trim on a Steveston home, painted by Colour Craft Painting" loading="lazy" width="760" height="1014"></div>
             <div>
               <h3>Trim, Shutters, Fascia &amp; Soffits Painting</h3>
               <p>Trim, shutters, fascia, and soffits are coated to protect vulnerable edges from moisture while keeping your home's lines clean and defined. These details are often the first to show wear. Our painters give them the same level of care as the main surfaces, using premium products that resist cracking and peeling.</p>
@@ -521,7 +522,7 @@ a.contact-row:hover{border-color:var(--gold)}
           </div>
 
           <div class="svc-card">
-            <div class="svc-card-img"><img src="img/svc-ext-door.webp" alt="Painter finishing a bold red double front door, exterior door painting by Colour Craft Painting" loading="lazy" width="760" height="507"></div>
+            <div class="svc-card-img"><img src="img/svc-ext-door.webp" alt="Painter finishing a bold red double front door, exterior door painting by Colour Craft Painting" loading="lazy" width="760" height="671"></div>
             <div>
               <h3>Front Door Painting</h3>
               <p>A newly finished front door can redefine how your entire home is perceived. We apply even, resilient coatings that create a clean focal point and welcoming first impression. Whether you want a bold statement colour or a classic neutral, our painters prepare, prime, and finish your door for lasting durability and curb appeal.</p>
@@ -530,7 +531,7 @@ a.contact-row:hover{border-color:var(--gold)}
           </div>
 
           <div class="svc-card">
-            <div class="svc-card-img"><img src="img/svc-ext-garage.webp" alt="Freshly painted dark charcoal garage door with glass panels, garage door painting by Colour Craft Painting" loading="lazy" width="760" height="507"></div>
+            <div class="svc-card-img"><img src="img/svc-ext-garage.webp" alt="Freshly painted dark charcoal garage door with glass panels, garage door painting by Colour Craft Painting" loading="lazy" width="760" height="570"></div>
             <div>
               <h3>Garage Door Painting</h3>
               <p>Weathered garage doors are restored with finishes formulated to resist peeling, fading, and daily exposure while aligning visually with the surrounding exterior. We clean, sand, prime, and apply a durable topcoat that holds up to UV, moisture, and seasonal temperature changes.</p>
@@ -539,7 +540,7 @@ a.contact-row:hover{border-color:var(--gold)}
           </div>
 
           <div class="svc-card">
-            <div class="svc-card-img"><img src="img/svc-ext-deck.webp" alt="Cedar fence after semi-transparent staining, deck and fence work by Colour Craft Painting" loading="lazy" width="760" height="507"></div>
+            <div class="svc-card-img"><img src="img/svc-ext-deck.webp" alt="Cedar fence after semi-transparent staining, deck and fence work by Colour Craft Painting" loading="lazy" width="760" height="570"></div>
             <div>
               <h3>Deck and Fence Staining</h3>
               <p>Professional staining preserves outdoor wood by limiting moisture absorption and sun damage, extending usability while enhancing natural texture. We power wash, brighten, and allow the wood to dry fully before applying Sherwin-Williams Woodscapes or Sikkens Cetol, products chosen for penetration, UV protection, and durability. Deck and fence staining is quoted separately and is not covered by the 2-year workmanship warranty.</p>
@@ -550,19 +551,24 @@ a.contact-row:hover{border-color:var(--gold)}
 
         <p style="margin-top:8px"><b>Where we work:</b> all of Richmond including Seafair, Steveston, Broadmoor and Quilchena, plus Ladner, Tsawwassen, Delta and North Delta.</p>
 
+        <div class="cta-band">
+          <p>Every home on this page started with a free estimate.<span>Detailed written quote with photos within 24 hours of the visit.</span></p>
+          <a class="btn big dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Book Free Estimate</a>
+        </div>
+
         <div class="sec-eyebrow">Our Work</div>
         <h2>Recent Exterior Projects in Richmond &amp; Delta</h2>
         <p style="margin-bottom:20px">Every photo below is a home our crews painted in Seafair, Steveston or Tsawwassen.</p>
         <div class="svc-gallery">
-          <div><img src="img/g-rd-1.webp" alt="Completed rear exterior, Seafair Richmond BC" loading="lazy" width="560" height="560"></div>
-          <div><img src="img/g-rd-3.webp" alt="Completed exterior repaint, Steveston Richmond BC" loading="lazy" width="560" height="560"></div>
-          <div><img src="img/g-rd-5.webp" alt="Completed white exterior, Tsawwassen Delta BC" loading="lazy" width="560" height="560"></div>
-          <div><img src="img/g-rd-7.webp" alt="Completed masonry fence, Seafair Richmond BC" loading="lazy" width="560" height="560"></div>
-          <div><img src="img/g-rd-4.webp" alt="Completed two-tone exterior, Steveston Richmond BC" loading="lazy" width="560" height="560"></div>
-          <div><img src="img/g-rd-6.webp" alt="Completed covered patio and siding, Tsawwassen Delta BC" loading="lazy" width="560" height="560"></div>
-          <div><img src="img/g-rd-2.webp" alt="Completed front elevation, Seafair Richmond BC" loading="lazy" width="560" height="560"></div>
-          <div><img src="img/g-rd-8.webp" alt="Completed trim and gutters, Steveston Richmond BC" loading="lazy" width="560" height="560"></div>
-          <div><img src="img/g-rd-9.webp" alt="Completed siding and chimney, Tsawwassen Delta BC" loading="lazy" width="560" height="560"></div>
+          <div><img src="img/g-rd-1.webp" alt="Completed rear exterior, Seafair Richmond BC" loading="lazy" width="560" height="420"></div>
+          <div><img src="img/g-rd-3.webp" alt="Completed exterior repaint, Steveston Richmond BC" loading="lazy" width="560" height="420"></div>
+          <div><img src="img/g-rd-5.webp" alt="Completed white exterior, Tsawwassen Delta BC" loading="lazy" width="560" height="747"></div>
+          <div><img src="img/g-rd-7.webp" alt="Completed masonry fence, Seafair Richmond BC" loading="lazy" width="560" height="420"></div>
+          <div><img src="img/g-rd-4.webp" alt="Completed two-tone exterior, Steveston Richmond BC" loading="lazy" width="560" height="747"></div>
+          <div><img src="img/g-rd-6.webp" alt="Completed covered patio and siding, Tsawwassen Delta BC" loading="lazy" width="560" height="747"></div>
+          <div><img src="img/g-rd-2.webp" alt="Completed front elevation, Seafair Richmond BC" loading="lazy" width="560" height="420"></div>
+          <div><img src="img/g-rd-8.webp" alt="Completed trim and gutters, Steveston Richmond BC" loading="lazy" width="560" height="747"></div>
+          <div><img src="img/g-rd-9.webp" alt="Completed siding and chimney, Tsawwassen Delta BC" loading="lazy" width="560" height="747"></div>
         </div>
 
         <div class="proof-quote" style="margin:36px 0 0">

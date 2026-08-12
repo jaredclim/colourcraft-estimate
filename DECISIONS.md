@@ -79,3 +79,72 @@ Removed and why: the Franco warranty review (a single job needing house, deck an
 5. Real interior project photo + value, before interior ad groups run.
 6. Seasonal fall-rain lines: swap around October.
 7. Known accessibility deviation inherited from the site: gold `#FFAE00` on white measures 1.86:1 for the small eyebrow labels and stars. Kept for parity; the information they carry is repeated in adjacent dark text. Worth raising sitewide with Brad rather than diverging here.
+
+---
+
+# The mini-site (added 2026-08-11)
+
+Eight pages, all assembled by `node build.mjs` from one stylesheet, one layout
+and shared partials. Root `.html` files are build output; edit `src/`.
+
+## Why a self-contained mini-site rather than a single page
+
+Verified against the competitor, not assumed: Pro Works' Richmond ads subdomain
+has **16 internal links and zero links off it** — nav, footer and every CTA stay
+on the subdomain across 19 pages. Sending our paid clicks to
+colourcraftpainting.com would hand the visitor to a site whose CTAs route
+through the postal-code gate and whose tracking is separate. Our nav now matches
+their model: everything stays on our domain, in our tracking, on our booking
+form. The logo links to our own landing page for the same reason.
+
+## Which service pages exist, and why not the others
+
+Exterior, interior, deck & fence. Not cabinets: Jared hands cabinet estimates to
+Brad and this territory has no cabinet crew, so paid clicks must not promote it
+(vault, Services — What CC Does and Does Not Do, updated 2026-08-11). Not
+commercial, residential-as-a-page, new construction or property management:
+Pro Works runs eight service pages because they have proof behind each; we would
+be shipping thin pages a visitor learns something bad from. Commercial has no
+Richmond & Delta track record in the vault and is off-message for homeowner-
+intent ads.
+
+## Per-page truth constraints
+
+| Page | Constraint | Source |
+|---|---|---|
+| Deck & fence | 3 trust items, 3 stats, an explicit callout and an FAQ answer stating the work is quoted separately and NOT warranted | vault: deck/fence is not warrantied. The site's own deck page also drops the warranty chip |
+| Interior | No cabinet card; no per-room price; no local-proof claim and no gallery | cabinets handed off; interior pricing unsettled for this territory; zero R&D interior projects exist |
+| Our Work | Five real projects using the site's index-card values | site index cards; the detail pages disagree and three render malformed three-part ranges |
+| Reviews | 4.9/187+ labelled as a Colour Craft network figure; other-territory reviews shown separately and labelled | the site's own reviews list contains Philadelphia, Vancouver and Squamish reviews |
+| Why Us | The /our-brand promises verbatim | vault names /our-brand canonical; /about carries a conflicting second set |
+| All pages | Warranty always scoped to house painting | the unscoped version contradicted the deck page |
+
+## Things removed on purpose
+
+- **Franco D.'s warranty review.** Genuine and verbatim, but it describes deck
+  and fence work honoured under warranty, which contradicts our own deck page.
+- **The named attribution on the Seafair testimonial.** The quote is on that
+  project's page; I could not verify the words belong to the named client, so it
+  reads "Homeowner, Seafair". After misattributing Brad's bio line to Jared
+  earlier in this build, unverified attributions do not ship.
+- **Two before/after pairs on Our Work** (Diane, Mark) reduced to single after
+  shots: the before and after were different views, so the comparison disproved
+  itself. Three honest pairs beat five where two undermine the device.
+
+## Conversion decisions
+
+- Sticky quote sidebar on the service pages, matching the reference service page.
+- CTA bands inserted wherever a desktop stretch ran past ~1,800px with no ask.
+  Largest desktop gaps after: interior 800, contact 763, deck 1,092, why-us
+  1,241, reviews 1,332, exterior 1,330, our-work 1,704, landing 1,938.
+- Mobile relies on the persistent sticky call/book bar, present on all 8 pages.
+- Hero proof line (stars, rating, 24-hour quote promise) on service pages: the
+  rating was otherwise unreachable until deep scroll.
+
+## Known, not yet fixed
+
+- Declared image dimensions were corrected to natural dimensions, but boxes are
+  CSS-controlled with object-fit:cover, so rendered aspect intentionally differs.
+  Measured CLS on the live landing page was 0.0007, so this is not a live defect.
+- Mobile H1 is 38px against the reference's 48px. Deliberate: 48px overpowered
+  the fold on the longer geo-bearing headlines these pages use.

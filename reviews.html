@@ -66,7 +66,7 @@ header{position:sticky;top:0;background:var(--white);border-bottom:1px solid var
 .nav-drop:hover .nav-menu,.nav-drop:focus-within .nav-menu,.nav-drop.open .nav-menu{display:flex}
 .nav-menu a{padding:10px 12px;border-radius:3px;text-transform:none;letter-spacing:normal;font-size:15px;font-weight:600}
 .nav-menu a:hover{background:var(--off)}
-.nav-toggle{display:none;background:none;border:0;cursor:pointer;color:var(--dark);padding:8px;margin:-8px}
+.nav-toggle{display:none;align-items:center;justify-content:center;min-width:44px;min-height:44px;background:none;border:0;cursor:pointer;color:var(--dark)}
 .mobile-nav{border-top:1px solid var(--border);background:var(--white);padding:8px 0 14px}
 .mobile-nav a{display:block;padding:13px 0;font-family:'Barlow',sans-serif;font-size:16px;font-weight:600;border-bottom:1px solid var(--border)}
 .mobile-nav a:last-child{border-bottom:none}
@@ -200,7 +200,7 @@ ul.two-col li:nth-last-child(-n+2){box-shadow:none}
 footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
 .foot-main{padding:56px 0}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px}
-.foot-grid img{height:64px;margin-bottom:14px}
+.foot-grid img{height:64px;width:auto;object-fit:contain;margin-bottom:14px}
 .foot-grid p{font-size:14px;line-height:24px;max-width:280px}
 .foot-grid h4{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:var(--white);margin-bottom:14px}
 .foot-grid a{display:flex;align-items:center;gap:8px;font-size:15px;line-height:20px;padding:11px 0;min-height:44px;color:rgba(255,255,255,.7)}
@@ -304,6 +304,7 @@ a.contact-row:hover{border-color:var(--gold)}
 .svc-hero.on-light .svc-hero-bg::after{background:linear-gradient(105deg,rgba(0,0,0,.72),rgba(0,0,0,.55) 55%,rgba(0,0,0,.25))}
 .svc-hero-in{position:relative;padding:128px 0 48px}
 .crumb{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:14px;line-height:20px;color:rgba(255,255,255,.6)}
+.crumb a{display:inline-flex;align-items:center;min-height:44px}
 .crumb a:hover{color:var(--gold)}
 .crumb .sep{color:rgba(255,255,255,.4)}
 .crumb .here{color:rgba(255,255,255,.8)}
@@ -349,7 +350,7 @@ a.contact-row:hover{border-color:var(--gold)}
 .split-cta .eyebrow{font-size:12px;letter-spacing:1.2px;margin-bottom:12px}
 .split-cta h2{color:var(--white);font-size:30px;line-height:36px;font-weight:900;margin-bottom:14px}
 .split-cta p{color:rgba(255,255,255,.8);font-size:14px;line-height:22.75px;margin-bottom:22px;max-width:640px}
-.split-cta a.inline{color:var(--gold);font-weight:600}
+.split-cta a.inline{color:var(--gold);font-weight:600;display:inline-block;padding:6px 0}
 .split-cta a.inline:hover{text-decoration:underline}
 .split-cta .btn.big{font-size:14px;font-weight:900;letter-spacing:.35px;border-radius:0;padding:12px 32px}
 .split-stats{background:var(--white);padding:56px 40px;display:flex;align-items:center;justify-content:center}
@@ -370,7 +371,7 @@ a.contact-row:hover{border-color:var(--gold)}
   .svc-hero{min-height:auto}
   .svc-hero-in{padding:56px 0 40px}
   .svc-hero-bg::after{background:linear-gradient(180deg,rgba(10,10,10,.74),rgba(10,10,10,.66) 55%,rgba(10,10,10,.8))}
-  .svc-hero h1{font-size:32px;line-height:36px}
+  .svc-hero h1{font-size:38px;line-height:42px}
   .crumb{font-size:13px}
   .svc-card{grid-template-columns:1fr;gap:20px}
   .svc-card:nth-child(even) .svc-card-img{order:0}
