@@ -226,10 +226,6 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
 .rev-stats .n{font-family:'Montserrat',sans-serif;font-size:30px;font-weight:900;color:var(--gold);letter-spacing:-0.6px}
 .rev-stats .l{font-size:13px;color:rgba(255,255,255,.7);margin-top:2px}
 .rev-wall{background:var(--dark);color:var(--white);padding:40px 0 64px}
-.rev-chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
-.chip{font-family:'Barlow',sans-serif;font-size:12px;font-weight:700;letter-spacing:.96px;text-transform:uppercase;padding:10px 16px;border-radius:3px;background:var(--dark-alt);color:rgba(255,255,255,.85);border:0;cursor:pointer;min-height:44px}
-.chip.active{background:var(--gold);color:var(--dark)}
-.chip:hover:not(.active){background:#3a3a3a}
 .rev-grid-dark{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .revd{background:var(--dark-alt);border-radius:4px;padding:22px}
 .revd-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
@@ -502,11 +498,6 @@ a.contact-row:hover{border-color:var(--gold)}
 
 <div class="rev-wall">
   <div class="wrap">
-    <div class="rev-chips" role="tablist">
-      <button type="button" class="chip" data-loc="all">All Locations</button>
-      <button type="button" class="chip active" data-loc="rd">Richmond &amp; Delta</button>
-      <button type="button" class="chip" data-loc="ph">Philadelphia</button>
-    </div>
 
     <div class="rev-grid-dark">
       <div class="revd" data-loc="rd">
@@ -539,25 +530,10 @@ a.contact-row:hover{border-color:var(--gold)}
         <div class="stars-row"><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg></div>
         <p>"Quality work"</p>
       </div>
-      <div class="revd" data-loc="ph">
-        <div class="revd-head"><span class="avatar" style="background:#4E6E8C">Z</span><div><b>Zachary Vorndran</b><span class="loc">Philadelphia</span></div><svg class="ic gmark" width="18" height="18"><use href="#ic-google"/></svg></div>
-        <div class="stars-row"><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg></div>
-        <p>"Colour Craft did an incredible job painting our three bedrooms and stairway hall. They were quick to come out and get us a quote, and turned around a finished job within the next week and half. GianCarlo walks you through every step and ensures you're comfortable with each decision. Andrew was professional the entire way and kept us updated throughout the job. Would love to have them come back for our next project!"</p>
-      </div>
-      <div class="revd" data-loc="ph">
-        <div class="revd-head"><span class="avatar" style="background:#A65E5E">K</span><div><b>Kathy Dirksen</b><span class="loc">Philadelphia</span></div><svg class="ic gmark" width="18" height="18"><use href="#ic-google"/></svg></div>
-        <div class="stars-row"><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg></div>
-        <p>"We had a great experience working with Colour Craft Painting. GianCarlo and his team were very responsive, and able to accommodate our timing. Lots of communication. Very thorough job. Highly recommend."</p>
-      </div>
-      <div class="revd" data-loc="ph">
-        <div class="revd-head"><span class="avatar" style="background:#6E4E8C">A</span><div><b>Anthony W</b><span class="loc">Philadelphia</span></div><svg class="ic gmark" width="18" height="18"><use href="#ic-google"/></svg></div>
-        <div class="stars-row"><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg><svg class="ic" width="14" height="14"><use href="#ic-star"/></svg></div>
-        <p>"I was able to get on the schedule quickly. Andrew's work was meticulous. It came out better than I could have asked for. I would highly recommend Colour Crafters to anyone looking for painting work. The price was good too, btw."</p>
-      </div>
     </div>
 
     <div class="rev-wall-foot">
-      <p>The 4.9 rating covers Colour Craft as a whole. Reviews above are shown by region so you can see where the number comes from.</p>
+      <p>The 4.9 rating covers Colour Craft as a whole; our Richmond &amp; Delta Google profile is new this season and growing. <a class="gold-link" href="https://www.google.com/maps/search/COLOUR+CRAFT+PAINTING+Richmond+%26+Delta" target="_blank" rel="noopener" style="display:inline-flex;min-height:0">Read our reviews on Google</a></p>
       <a class="btn big dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Schedule Free Estimate</a>
     </div>
   </div>
@@ -573,25 +549,6 @@ a.contact-row:hover{border-color:var(--gold)}
     </div>
   </div>
 </div>
-
-<script>
-  (function(){
-    var chips=document.querySelectorAll('.rev-chips .chip');
-    chips.forEach(function(c){
-      c.addEventListener('click', function(){
-        chips.forEach(function(x){x.classList.remove('active');});
-        c.classList.add('active');
-        var loc=c.getAttribute('data-loc');
-        document.querySelectorAll('.revd').forEach(function(r){
-          r.style.display = (loc==='all' || r.getAttribute('data-loc')===loc) ? '' : 'none';
-        });
-      });
-    });
-    document.querySelectorAll('.revd').forEach(function(r){
-      if(r.getAttribute('data-loc')!=='rd') r.style.display='none';
-    });
-  })();
-</script>
 
 <section class="tinted pageend">
   <div class="wrap">
