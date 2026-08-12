@@ -7,7 +7,8 @@
 <title>House Painters in Richmond &amp; Delta, BC | Colour Craft Painting</title>
 <meta name="description" content="Free written painting estimates in Richmond and Delta, BC. Fixed pricing, 2-year written warranty, WCB and $5M insured. Book your free estimate today.">
 <link rel="icon" href="img/logo.png">
-<link rel="preload" as="image" href="img/hero_home.jpg">
+<link rel="preload" as="image" href="img/hero_home.webp" media="(min-width:861px)">
+<link rel="preload" as="image" href="img/hero_home_m.webp" media="(max-width:860px)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,14 +22,21 @@
   gtag('config', 'AW-18373361083');
   gtag('config', 'AW-18373361083/2VO7CKDk8N0cELv7jLlE', {
     'phone_conversion_number': '1-866-99-CRAFT',
-    'phone_conversion_css_class': 'ccp-phone-swap'
+    'phone_conversion_css_class': 'ccp-phone-swap',
+    // Click-to-call: the css_class swaps displayed text only, so rewrite the
+    // tel: href too or mobile taps dial the untracked number.
+    'phone_conversion_callback': function(formatted_number, mobile_number) {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+        a.href = 'tel:' + mobile_number.replace(/[^0-9+]/g,'');
+      });
+    }
   });
 </script>
 
 <style>
 /* Tokens extracted from colourcraftpainting.com computed styles — see DECISIONS.md */
 :root{
-  --gold:#FFAE00; --gold-deep:#e69c00; --dark:#1A1A1A; --dark-alt:#2A2A2A;
+  --gold:#FFAE00; --gold-deep:#e09900; --dark:#1A1A1A; --dark-alt:#2A2A2A;
   --off:#F9F8F6; --white:#ffffff; --border:#E5E3DF; --text-soft:#4A5565;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -42,9 +50,10 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
 
-.utility{background:var(--gold);color:var(--dark);font-size:16px;font-weight:400;line-height:16px}
+.utility{background:var(--gold);color:rgba(26,26,26,.7);font-size:12px;font-weight:500;line-height:16px}
+
 .utility-in{display:flex;justify-content:space-between;align-items:center;padding:8px 0;gap:14px}
-.utility a{display:inline-flex;align-items:center;gap:8px}
+.utility a{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--dark);font-weight:700}
 .utility a{font-weight:700;white-space:nowrap}
 .utility .u-right{display:flex;gap:24px;align-items:center}
 
@@ -55,7 +64,7 @@ header{position:sticky;top:0;background:var(--white);border-bottom:1px solid var
 .nav a:hover{color:var(--gold-deep)}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:var(--dark);font-family:'Barlow',sans-serif;font-weight:700;font-size:12px;line-height:16px;letter-spacing:.96px;text-transform:uppercase;padding:12px 20px;border-radius:3px;text-align:center;transition:background .15s}
-.btn:hover{background:var(--gold-deep)}
+.btn:hover{background:var(--gold-deep);transform:translateY(-1px);box-shadow:0 4px 16px rgba(255,174,0,.4)}
 .btn.big{font-size:13px;line-height:19.5px;letter-spacing:1.04px;padding:14px 32px}
 .btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.5);color:var(--white)}
 .btn.ghost:hover{background:var(--white);color:var(--dark)}
@@ -64,11 +73,11 @@ header{position:sticky;top:0;background:var(--white);border-bottom:1px solid var
 
 .hero{position:relative;color:var(--white);background:var(--dark);display:flex;align-items:flex-end;min-height:60vh}
 .hero > .wrap{width:100%}
-.hero-bg{position:absolute;inset:0;background:url('img/hero_home.jpg') center 42%/cover no-repeat}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.42) 55%,rgba(0,0,0,.12) 100%)}
-.hero-in{position:relative;padding:72px 0 48px;max-width:880px;width:100%}
+.hero-bg{position:absolute;inset:0;background:url('img/hero_home.webp') center 42%/cover no-repeat}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.3) 55%,rgba(0,0,0,.05) 100%)}
+.hero-in{position:relative;padding:72px 0 48px;max-width:672px;width:100%}
 .eyebrow{font-family:'Barlow',sans-serif;font-weight:700;letter-spacing:1.98px;line-height:16.5px;text-transform:uppercase;font-size:11px;color:var(--gold);margin-bottom:12px}
-.hero h1{color:var(--white);font-size:72px;font-weight:900;line-height:72px;letter-spacing:normal;margin-bottom:18px;text-shadow:rgba(0,0,0,.6) 0 2px 20px}
+.hero h1{color:var(--white);font-size:64px;font-weight:900;line-height:64px;letter-spacing:-1.28px;margin-bottom:18px;text-shadow:rgba(0,0,0,.6) 0 2px 20px}
 .hero h1 span{color:var(--gold);display:block}
 .hero .sub{font-size:18px;line-height:28px;color:rgba(255,255,255,.85);margin-bottom:6px}
 .hero .craft{font-family:'Montserrat',sans-serif;font-size:18px;line-height:28px;font-weight:700;color:var(--gold);margin-bottom:28px}
@@ -76,46 +85,47 @@ header{position:sticky;top:0;background:var(--white);border-bottom:1px solid var
 .rating{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .rating .stars{color:var(--gold);font-size:26px;letter-spacing:3px;line-height:1}
 .rating .r-num{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:900;color:var(--white)}
-.rating .r-label{font-size:15px;font-weight:600;color:#f2f0ec}
+.rating .r-label{font-size:16px;font-weight:600;color:rgba(255,255,255,.85)}
 .rating .r-label b{color:var(--gold)}
 
 .featurebar{background:var(--gold);color:var(--dark)}
-.featurebar-in{display:flex;justify-content:center;gap:8px 32px;flex-wrap:wrap;padding:16px 0;font-size:16px;line-height:20px;font-weight:400}
-.featurebar span{display:inline-flex;align-items:center;gap:16px}
+.featurebar-in{display:flex;justify-content:center;gap:8px 32px;flex-wrap:wrap;padding:16px 0;font-size:14px;line-height:20px;font-weight:600}
+.featurebar span{display:inline-flex;align-items:center;gap:8px}
 
 
 section{padding:64px 0}
 section.tinted{background:var(--off)}
 .sec-eyebrow{font-family:'Barlow',sans-serif;font-weight:700;letter-spacing:1.98px;line-height:16.5px;text-transform:uppercase;font-size:11px;color:var(--gold);margin-bottom:12px}
 section h2{font-size:30px;line-height:36px;font-weight:900;margin-bottom:12px}
-.lede{color:var(--text-soft);max-width:720px;margin-bottom:36px;font-size:17px}
+.lede{color:var(--text-soft);max-width:768px;margin-bottom:36px;font-size:18px;line-height:28px}
 
-.card{background:var(--white);border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.card{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .card-body{padding:18px 20px 20px}
 .card-tag{display:inline-block;background:var(--gold);color:var(--dark);font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.96px;text-transform:uppercase;padding:4px 9px;border-radius:3px;margin-bottom:9px}
 .card h3{font-size:16px;line-height:24px;font-weight:900;margin-bottom:4px}
 .ba{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:2px}
 .ba.single{grid-template-columns:1fr}
-.ba img{height:250px;width:100%;object-fit:cover}
-.ba-chip{position:absolute;top:10px;font-family:'Barlow',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.96px;padding:4px 9px;border-radius:3px}
+.ba{aspect-ratio:16/9}
+.ba img{height:100%;width:100%;object-fit:cover}
+.ba-chip{position:absolute;top:10px;font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.96px;padding:4px 9px;border-radius:3px}
 .ba-chip.before{left:10px;background:rgba(20,20,20,.85);color:var(--white)}
 .ba-chip.after{right:10px;background:var(--gold);color:var(--dark)}
-.stat-line{display:flex;gap:8px 16px;flex-wrap:wrap;font-size:13.5px;color:var(--text-soft);border-top:1px solid var(--border);margin-top:12px;padding-top:11px;font-weight:600}
+.stat-line{display:flex;gap:8px 16px;flex-wrap:wrap;font-size:15px;color:var(--text-soft);border-top:1px solid var(--border);margin-top:12px;padding-top:11px;font-weight:600}
 
 .review-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
 .review-head .stars{color:var(--gold);font-size:26px;letter-spacing:3px;line-height:1}
 .review-head .r-num{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:900}
 .review-head .r-label{font-size:16px;font-weight:600;color:var(--text-soft)}
-.rev{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:24px}
+.rev{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:24px}
 .rev .stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:10px}
 .rev .praised{display:inline-block;background:var(--off);border:1px solid var(--border);border-radius:3px;font-size:11px;font-weight:700;color:var(--text-soft);padding:3px 9px;margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase}
-.rev p{font-size:15.5px;margin-bottom:14px}
+.rev p{font-size:16px;line-height:26px;margin-bottom:14px}
 .rev .who{font-size:14px;font-weight:700}
-.rev .where{font-size:13px;color:var(--text-soft)}
+.rev .where{font-size:14px;color:var(--text-soft)}
 
 .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
-.check{display:flex;gap:13px;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:6px;padding:24px}
+.check{display:flex;gap:13px;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:4px;padding:24px}
 .check .tick{color:var(--gold);font-weight:800;font-size:18px;line-height:1.4}
 .check b{display:block;font-family:'Montserrat',sans-serif;font-size:16px;line-height:24px;font-weight:900;margin-bottom:4px}
 .check span{font-size:15px;color:var(--text-soft)}
@@ -124,22 +134,22 @@ section h2{font-size:30px;line-height:36px;font-weight:900;margin-bottom:12px}
 .owner-photo{width:200px;height:200px;border-radius:4px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)}
 .owner-in h2{margin-bottom:2px}
 .owner .role{font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.98px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.owner p{color:var(--text-soft);font-size:16px;margin-bottom:12px;max-width:760px}
-.owner .pull{border-left:3px solid var(--gold);padding-left:16px;color:var(--dark);font-size:16.5px;font-style:italic;margin-top:16px}
+.owner p{color:var(--text-soft);font-size:16px;line-height:26px;margin-bottom:12px;max-width:768px}
+.owner .pull{border-left:3px solid var(--gold);padding-left:16px;color:var(--dark);font-size:18px;font-style:italic;margin-top:16px}
 
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .step{position:relative}
-.step .num{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--dark);font-family:'Montserrat',sans-serif;font-weight:900;font-size:15px;margin-bottom:18px}
-.step::after{content:"";position:absolute;top:28px;left:72px;right:-14px;height:1px;background:var(--border)}
+.step .num{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--dark);font-family:'Barlow',sans-serif;font-weight:900;font-size:18px;margin-bottom:18px;box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
+.step::after{content:"";position:absolute;top:28px;left:68px;right:-12px;height:1px;background:var(--gold)}
 .step:last-child::after{display:none}
 .step h3{font-size:16px;line-height:24px;font-weight:900;margin-bottom:8px}
-.step p{font-size:15px;color:var(--text-soft)}
+.step p{font-size:16px;line-height:26px;color:var(--text-soft)}
 
 .cols2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px}
 .cost-card.wide{margin-bottom:28px}
 ul.two-col{columns:2;column-gap:36px}
 ul.two-col li{break-inside:avoid}
-.cost-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:24px}
+.cost-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:24px}
 .cost-card h3{font-size:16px;line-height:24px;font-weight:900;margin-bottom:12px}
 .cost-card ul{list-style:none}
 .cost-card li{padding:8px 0 8px 24px;position:relative;font-size:16px;line-height:26px;border-bottom:1px solid var(--border)}
@@ -148,31 +158,35 @@ ul.two-col li{break-inside:avoid}
 
 .promise-callout{background:var(--dark);color:var(--white);border-radius:4px;padding:28px 32px;border-left:3px solid var(--gold)}
 .promise-callout h3{color:var(--white);font-size:20px;line-height:28px;font-weight:900;margin-bottom:8px}
-.promise-callout p{color:#d9d4c8;font-size:16px;max-width:860px}
+.promise-callout p{color:rgba(255,255,255,.7);font-size:16px;line-height:26px;max-width:768px}
 
 .quote-compare{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--white)}
-.qc-row{display:grid;grid-template-columns:1fr 1.35fr;border-bottom:1px solid var(--border)}
+.qc-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
 .qc-row:last-child{border-bottom:none}
 .qc-row.qc-head{background:var(--off);font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-soft)}
-.qc-row > div{padding:14px 18px;font-size:15.5px}
+.qc-row > div{padding:14px 18px;font-size:16px;line-height:26px}
 .qc-row .vague{color:var(--text-soft);font-style:italic;border-right:1px solid var(--border)}
 .qc-row .real{font-weight:600}
 
-.qc-close{margin-top:20px;max-width:820px;color:var(--text-soft);font-size:16px}
+.cta-inline{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:4px;padding:22px 24px;margin-top:32px}
+.cta-inline p{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;line-height:26px}
+.cta-inline span{display:block;font-family:'Barlow',sans-serif;font-size:16px;font-weight:400;color:var(--text-soft);margin-top:2px}
+.sub-head{font-size:24px;line-height:32px;font-weight:900;margin:44px 0 12px}
+.qc-close{margin-top:20px;max-width:768px;color:var(--text-soft);font-size:16px;line-height:26px}
 
-.faq details{border:1px solid var(--border);border-radius:2px;margin-bottom:12px;background:var(--white);max-width:704px}
-.faq summary{cursor:pointer;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;line-height:24px;padding:16px 44px 16px 20px;list-style:none;position:relative}
+.faq details{border:1px solid var(--border);border-radius:4px;margin-bottom:12px;background:var(--white);max-width:768px}
+.faq summary{cursor:pointer;font-family:'Barlow',sans-serif;font-size:16px;font-weight:700;line-height:24px;padding:16px 44px 16px 20px;list-style:none;position:relative}
 .faq summary::after{content:"+";position:absolute;right:18px;top:13px;font-size:22px;color:var(--gold);font-weight:700}
 .faq details[open] summary::after{content:"\2013"}
 .faq details p{padding:0 20px 18px;color:var(--text-soft);font-size:16px;line-height:26px}
 
 .final{background:var(--gold);color:var(--dark);text-align:center}
 .final h2{font-size:30px;line-height:36px;font-weight:900;margin-bottom:10px}
-.final p{font-size:17px;margin-bottom:6px}
+.final p{font-size:18px;line-height:28px;margin-bottom:6px}
 .final .season{font-weight:600;margin-bottom:26px}
 .final .cta-row{justify-content:center;margin-bottom:0}
 .final .alt-line{margin-top:22px;font-size:15px}
-.final .alt-line a{font-weight:700;text-decoration:underline}
+.final .alt-line a{font-weight:700;text-decoration:underline;display:inline-flex;align-items:center;min-height:44px}
 
 footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
 .foot-main{padding:56px 0}
@@ -180,32 +194,40 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
 .foot-grid img{height:64px;margin-bottom:14px}
 .foot-grid p{font-size:14px;line-height:24px;max-width:280px}
 .foot-grid h4{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:var(--white);margin-bottom:14px}
-.foot-grid a{display:flex;align-items:center;gap:8px;font-size:14px;line-height:20px;padding:5px 0;color:rgba(255,255,255,.7)}
+.foot-grid a{display:flex;align-items:center;gap:8px;font-size:15px;line-height:20px;padding:11px 0;min-height:44px;color:rgba(255,255,255,.7)}
 .foot-grid a:hover{color:var(--gold)}
-.foot-legal{background:#111;border-top:1px solid rgba(255,255,255,.1);padding:20px 0;font-size:13px;color:rgba(255,255,255,.55)}
+.foot-legal{background:#111;border-top:1px solid rgba(255,255,255,.1);padding:20px 0;font-size:14px;color:rgba(255,255,255,.55)}
 
 .sticky-cta{display:none}
-#work,#reviews,#cost,#faq,#book{scroll-margin-top:120px}
+#work,#reviews,#cost,#faq,#book{scroll-margin-top:113px}
 
-@media (max-width: 860px){
-  .wrap{padding:0 20px}
+@media (max-width: 1023px){
   .nav{display:none}
-  .utility .u-left{display:none}
+  .head-phone-m{display:inline-flex;align-items:center;min-height:44px;font-weight:700;font-size:16px}
+}
+@media (min-width: 1024px){ .head-phone-m{display:none} }
+@media (max-width: 767px){
+  .wrap{padding:0 20px}
+  .utility{display:none}
   .utility-in{justify-content:center;gap:20px}
   .head-in img.logo{height:56px}
   .head-in .btn{display:none}
-  .head-phone-m{display:block;font-weight:700;font-size:16px}
-  .hero{min-height:clamp(440px,calc(100svh - 190px),620px)}
-  .hero-in{padding:44px 0}
-  .hero h1{font-size:34px;line-height:1.08;margin-bottom:16px}
+  .hero{min-height:58vh}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(10,10,10,.74) 0%,rgba(10,10,10,.66) 55%,rgba(10,10,10,.80) 100%)}
+  .hero-in{padding:36px 0 32px}
+  .hero-bg{background-image:url('img/hero_home_m.webp')}
+  .hero h1{font-size:36px;line-height:38px;letter-spacing:-0.7px;margin-bottom:16px}
   .hero .sub{font-size:17px}
   .hero .craft{font-size:16px;margin-bottom:24px}
   .cta-row .btn{flex:1 1 100%}
-  .featurebar-in{justify-content:flex-start;font-size:14px}
+  .featurebar-in{justify-content:flex-start;font-size:15px}
   section{padding:48px 0}
   section h2{font-size:24px;line-height:32px}
   .grid3,.cols2,.check-grid{grid-template-columns:1fr}
-  .ba img{height:220px}
+  .ba{grid-template-columns:1fr;aspect-ratio:auto}
+  .ba img{height:230px}
+  .ba-chip.after{right:auto;left:10px;top:calc(50% + 10px)}
+
   .steps{grid-template-columns:1fr;gap:26px}
   .foot-grid{grid-template-columns:1fr 1fr;gap:26px}
   .step::after{display:none}
@@ -217,11 +239,11 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
   .qc-row .real{padding-top:2px;padding-bottom:14px}
   .sticky-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--white);border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(0,0,0,.10)}
   .sticky-cta .call{flex:1;border:2px solid var(--dark);border-radius:3px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
-  .sticky-cta .btn{flex:1.4;font-size:12px;padding:15px 10px}
+  .sticky-cta .btn{flex:1.4;font-size:15px;letter-spacing:.6px;padding:15px 8px}
   body{padding-bottom:74px}
   footer{padding-bottom:56px}
 }
-@media (min-width: 861px){ .head-phone-m{display:none} }
+
 </style>
 </head>
 <body>
@@ -247,11 +269,10 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
 <header>
   <div class="wrap">
     <div class="head-in">
-      <a href="https://colourcraftpainting.com/" target="_blank" rel="noopener"><img class="logo" src="img/logo.png" alt="Colour Craft Painting"></a>
+      <a href="https://colourcraftpainting.com/" target="_blank" rel="noopener"><img class="logo" src="img/logo.webp" alt="Colour Craft Painting" width="207" height="120"></a>
       <nav class="nav">
         <a href="https://colourcraftpainting.com/our-work" target="_blank" rel="noopener">Our Work</a>
         <a href="https://colourcraftpainting.com/reviews" target="_blank" rel="noopener">Reviews</a>
-        <a href="https://colourcraftpainting.com/about" target="_blank" rel="noopener">Why Us</a>
         <a href="https://colourcraftpainting.com/contact" target="_blank" rel="noopener">Contact</a>
       </nav>
       <a class="head-phone-m" href="tel:18669927238"><span class="ccp-phone-swap">1-866-99-CRAFT</span></a>
@@ -275,12 +296,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
       <div class="rating">
         <span class="stars-row"><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg></span>
         <span class="r-num">4.9</span>
-        <span class="r-label">Average Google Rating &middot; <b>187 Reviews</b></span>
+        <span class="r-label">Average Google Rating &middot; <b>187+ Reviews</b></span>
       </div>
     </div>
   </div>
 </div>
 
+<main>
 <div class="featurebar">
   <div class="wrap">
     <div class="featurebar-in">
@@ -301,8 +323,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
     <div class="grid3">
       <div class="card">
         <div class="ba">
-          <img src="img/mum_b.jpg" alt="Faded exterior before painting, Steveston Richmond BC" loading="lazy" width="480" height="360">
-          <img src="img/mum_a2.jpg" alt="Repainted exterior after, Steveston Richmond BC" loading="lazy" width="480" height="640" style="object-position:center 62%">
+          <img src="img/mum_b.webp" alt="Faded exterior before painting, Steveston Richmond BC" loading="lazy" width="480" height="360">
+          <img src="img/mum_a2.webp" alt="Repainted exterior after, Steveston Richmond BC" loading="lazy" width="480" height="640" style="object-position:center 62%">
           <span class="ba-chip before">BEFORE</span>
           <span class="ba-chip after">AFTER</span>
         </div>
@@ -314,8 +336,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
       </div>
       <div class="card">
         <div class="ba">
-          <img src="img/andy_b2.jpg" alt="Dark weathered exterior before painting, Tsawwassen Delta BC" loading="lazy" width="640" height="480">
-          <img src="img/andy_a2.jpg" alt="Bright white repainted exterior after, Tsawwassen Delta BC" loading="lazy" width="640" height="853">
+          <img src="img/andy_b2.webp" alt="Dark weathered exterior before painting, Tsawwassen Delta BC" loading="lazy" width="640" height="480">
+          <img src="img/andy_a2.webp" alt="Bright white repainted exterior after, Tsawwassen Delta BC" loading="lazy" width="640" height="853">
           <span class="ba-chip before">BEFORE</span>
           <span class="ba-chip after">AFTER</span>
         </div>
@@ -327,7 +349,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
       </div>
       <div class="card">
         <div class="ba single">
-          <img src="img/ray_a.jpg" alt="Finished luxury stucco exterior, Seafair Richmond BC" loading="lazy" width="640" height="480">
+          <img src="img/ray_a.webp" alt="Finished luxury stucco exterior, Seafair Richmond BC" loading="lazy" width="640" height="480">
         </div>
         <div class="card-body">
           <span class="card-tag">Seafair &middot; Richmond</span>
@@ -335,6 +357,10 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
           <div class="stat-line"><span>$18,000&ndash;$22,000</span><span>SW Emerald + Loxon</span></div>
         </div>
       </div>
+    </div>
+    <div class="cta-inline">
+      <p>Get a written quote for your home.<span>Free, and there is no obligation.</span></p>
+      <a class="btn big dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Schedule Free Estimate</a>
     </div>
   </div>
 </section>
@@ -385,6 +411,17 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
       <div class="check"><div class="tick"><svg class="ic" width="18" height="18"><use href="#ic-check"/></svg></div><div><b>A written warranty</b><span>Ours is a 2-year workmanship warranty in plain language. If the work fails, we come back and fix it.</span></div></div>
       <div class="check"><div class="tick"><svg class="ic" width="18" height="18"><use href="#ic-check"/></svg></div><div><b>To know who shows up</b><span>A trained, uniformed Colour Craft crew with a crew leader responsible for your project, not whoever was available that week.</span></div></div>
     </div>
+    <h3 class="sub-head">How to tell a real quote from a vague one</h3>
+    <p class="lede">If you're comparing quotes, the totals only mean something when the scopes match. Check every quote for these five things. Ours will have all five in writing.</p>
+    <div class="quote-compare">
+      <div class="qc-row qc-head"><div>If the quote just says</div><div>It should actually say</div></div>
+      <div class="qc-row"><div class="vague">"Paint the exterior"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>Every surface listed by name, with photos of what's included</div></div>
+      <div class="qc-row"><div class="vague">"Prep included"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>The actual prep, spelled out: washing, sanding, patching, caulking</div></div>
+      <div class="qc-row"><div class="vague">"Premium paint"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>The exact paint products being used</div></div>
+      <div class="qc-row"><div class="vague">"We'll clean up after"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>A clean site daily, and a final walkthrough together</div></div>
+      <div class="qc-row"><div class="vague">"Price may change depending on conditions"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>A fixed total that doesn't move after you approve it</div></div>
+    </div>
+    <p class="qc-close">Hold every painter to this standard, including us. If a quote can't show these five things, you can't know what the price actually buys.</p>
   </div>
 </section>
 
@@ -392,7 +429,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
   <div class="wrap">
     <div class="sec-eyebrow">Your local owner</div>
     <div class="owner-in">
-      <img class="owner-photo" src="img/jared2.jpg" alt="Jared Lim, franchise owner of Colour Craft Painting Richmond and Delta" loading="lazy" width="600" height="600">
+      <img class="owner-photo" src="img/jared2.webp" alt="Jared Lim, franchise owner of Colour Craft Painting Richmond and Delta" loading="lazy" width="600" height="600">
       <div>
         <h2>Jared Lim</h2>
         <div class="role">Franchise Owner &middot; Richmond &amp; Delta</div>
@@ -400,6 +437,10 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
         <p>After several years leading sales teams and coaching business owners, I came back to painting with Colour Craft. The Jared in the reviews above is me. I run the estimates myself, and the email at the bottom of this page comes straight to me.</p>
         <p class="pull">"Service is about how people feel throughout the whole process. It's not just an end product."</p>
       </div>
+    </div>
+    <div class="cta-inline">
+      <p>Have me quote your project.<span>I run the estimates myself.</span></p>
+      <a class="btn big dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Schedule Free Estimate</a>
     </div>
   </div>
 </section>
@@ -437,7 +478,20 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
   <div class="wrap">
     <div class="sec-eyebrow">Pricing</div>
     <h2>What does painting cost?</h2>
-    <p class="lede">Every home is different, which is why we quote in person and in writing. But you should know what moves the number, and exactly what your written quote will include.</p>
+    <p class="lede">Every home is different, which is why we quote in person and in writing. But you should know what recent local projects cost, and what moves the number.</p>
+    <div class="promise-callout" style="margin-bottom:28px">
+      <h3>Your written quote is your price.</h3>
+      <p>We visit your home, walk the project with you, and you have your detailed written quote, with photos, within 24 hours. The price you approve is the price you pay. No sign-today discounts, no pressure, no surprises at the end.</p>
+    </div>
+    <div class="cost-card wide" style="margin-bottom:28px">
+      <h3>Recent Richmond &amp; Delta exteriors, as quoted</h3>
+      <ul class="two-col">
+        <li><svg class="ic li-ic" width="14" height="14"><use href="#ic-check"/></svg>Full exterior repaint, Steveston: $9,000&ndash;$12,000</li>
+        <li><svg class="ic li-ic" width="14" height="14"><use href="#ic-check"/></svg>Full exterior repaint, Tsawwassen: $11,000&ndash;$13,000</li>
+        <li><svg class="ic li-ic" width="14" height="14"><use href="#ic-check"/></svg>Luxury stucco exterior, Seafair: $18,000&ndash;$22,000</li>
+        <li><svg class="ic li-ic" width="14" height="14"><use href="#ic-check"/></svg>Interiors are quoted the same way, in person and in writing</li>
+      </ul>
+    </div>
     <div class="cost-card wide">
       <h3>What moves the number</h3>
       <ul class="two-col">
@@ -449,39 +503,20 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
         <li><svg class="ic li-ic" width="14" height="14"><use href="#ic-check"/></svg>Whether rooms are furnished and lived in, or empty</li>
       </ul>
     </div>
-    <div class="promise-callout">
-      <h3>Your written quote is your price.</h3>
-      <p>We visit your home, walk the project with you, and you have your detailed written quote, with photos, within 24 hours. The price you approve is the price you pay. No sign-today discounts, no pressure, no surprises at the end.</p>
-    </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="sec-eyebrow">Comparing quotes</div>
-    <h2>How to tell a real quote from a vague one</h2>
-    <p class="lede">If you're comparing quotes, the totals only mean something when the scopes match. Check every quote for these five things. Ours will have all five in writing.</p>
-    <div class="quote-compare">
-      <div class="qc-row qc-head"><div>If the quote just says</div><div>It should actually say</div></div>
-      <div class="qc-row"><div class="vague">"Paint the exterior"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>Every surface listed by name, with photos of what's included</div></div>
-      <div class="qc-row"><div class="vague">"Prep included"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>The actual prep, spelled out: washing, sanding, patching, caulking</div></div>
-      <div class="qc-row"><div class="vague">"Premium paint"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>The exact paint products being used</div></div>
-      <div class="qc-row"><div class="vague">"We'll clean up after"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>A clean site daily, and a final walkthrough together</div></div>
-      <div class="qc-row"><div class="vague">"Price may change depending on conditions"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>A fixed total that doesn't move after you approve it</div></div>
-    </div>
-    <p class="qc-close">Hold every painter to this standard, including us. If a quote can't show these five things, you can't know what the price actually buys.</p>
-  </div>
-</section>
+
 
 <section class="tinted faq" id="faq">
   <div class="wrap">
     <div class="sec-eyebrow">Common Questions</div>
     <h2>Frequently Asked Questions</h2>
-    <details>
+    <details open>
       <summary>Will the price change after I get my quote?</summary>
       <p>No. Your quote is a fixed written price. If you add work later, you approve a written change first.</p>
     </details>
-    <details>
+    <details open>
       <summary>Are you insured?</summary>
       <p>Yes. WorkSafeBC coverage and $5 million in liability insurance. We can show you proof of both at your estimate.</p>
     </details>
@@ -525,11 +560,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="foot-main">
     <div class="wrap foot-grid">
       <div>
-        <img src="img/logo.png" alt="Colour Craft Painting">
+        <img src="img/logo.webp" alt="Colour Craft Painting" width="207" height="120">
         <p>Professional residential and commercial painting in Richmond &amp; Delta, BC.</p>
       </div>
       <div>
@@ -541,7 +578,6 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
       </div>
       <div>
         <h4>Company</h4>
-        <a href="https://colourcraftpainting.com/about" target="_blank" rel="noopener">Why Us</a>
         <a href="https://colourcraftpainting.com/our-work" target="_blank" rel="noopener">Our Work</a>
         <a href="https://colourcraftpainting.com/reviews" target="_blank" rel="noopener">Reviews</a>
         <a href="https://colourcraftpainting.com/contact" target="_blank" rel="noopener">Contact</a>
@@ -561,7 +597,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
 
 <div class="sticky-cta">
   <a class="call" href="tel:18669927238"><svg class="ic" width="16" height="16"><use href="#ic-phone"/></svg><span class="ccp-phone-swap">1-866-99-CRAFT</span></a>
-  <a class="btn dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Book Free Estimate</a>
+  <a class="btn dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Schedule Free Estimate</a>
 </div>
 
 <script>
