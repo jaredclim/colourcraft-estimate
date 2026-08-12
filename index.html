@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>House Painters in Richmond & Delta, BC | Colour Craft Painting</title>
+<title>House Painters in Richmond &amp; Delta, BC | Colour Craft Painting</title>
 <meta name="description" content="Free written painting estimates in Richmond and Delta, BC. Fixed pricing, 2-year written warranty, WCB and $5M insured. Book your free estimate today.">
 <link rel="icon" href="img/logo.png">
 <link rel="preload" as="image" href="img/hero_home.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18373361083"></script>
@@ -26,224 +26,187 @@
 </script>
 
 <style>
+/* Tokens extracted from colourcraftpainting.com computed styles — see DECISIONS.md */
 :root{
-  --gold:#FFAE00; --gold-deep:#e69c00; --dark:#1A1A1A; --dark-soft:#242424;
-  --off:#F9F6F1; --white:#ffffff; --text:#232323;
-  --text-soft:#5f5a50; --border:#e8e4dc;
+  --gold:#FFAE00; --gold-deep:#e69c00; --dark:#1A1A1A; --dark-alt:#2A2A2A;
+  --off:#F9F8F6; --white:#ffffff; --border:#E5E3DF; --text-soft:#5f5a50;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;background:#111}
-body{font-family:'Barlow',-apple-system,sans-serif;font-size:17px;line-height:1.6;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Montserrat',sans-serif;line-height:1.15;color:var(--dark)}
+html{scroll-behavior:smooth;background:var(--dark)}
+body{font-family:'Barlow',-apple-system,sans-serif;font-size:16px;line-height:1.65;color:var(--dark);background:var(--white);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Montserrat',sans-serif;color:var(--dark)}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
 
-/* utility bar (main-site pattern) */
-.utility{background:var(--gold);color:var(--dark);font-size:13.5px;font-weight:600}
-.utility-in{display:flex;justify-content:space-between;align-items:center;padding:7px 0;gap:14px}
+.utility{background:var(--gold);color:var(--dark);font-size:13px;font-weight:600}
+.utility-in{display:flex;justify-content:space-between;align-items:center;padding:8px 0;gap:14px}
 .utility a{font-weight:700;white-space:nowrap}
-.utility .u-right{display:flex;gap:26px;align-items:center}
+.utility .u-right{display:flex;gap:24px;align-items:center}
 
-/* header (main-site pattern) */
 header{position:sticky;top:0;background:var(--white);box-shadow:0 1px 0 var(--border);z-index:50}
-.head-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
-.head-in > img{height:76px;width:auto}
-.anchors{display:flex;gap:34px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dark)}
-.anchors a:hover{color:var(--gold-deep)}
-.btn{display:inline-block;background:var(--gold);color:var(--dark);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13.5px;text-transform:uppercase;letter-spacing:.06em;padding:14px 28px;border-radius:4px;text-align:center;transition:background .15s,transform .15s}
-.btn:hover{background:var(--gold-deep);transform:translateY(-1px)}
-.btn.big{font-size:15px;padding:17px 36px}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 0}
+.head-in img.logo{height:72px;width:auto}
+.nav{display:flex;gap:32px;font-family:'Barlow',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.nav a:hover{color:var(--gold-deep)}
+
+.btn{display:inline-block;background:var(--gold);color:var(--dark);font-family:'Barlow',sans-serif;font-weight:700;font-size:12px;letter-spacing:.96px;text-transform:uppercase;padding:12px 20px;border-radius:3px;text-align:center;transition:background .15s}
+.btn:hover{background:var(--gold-deep)}
+.btn.big{font-size:13px;padding:16px 28px}
 .btn.ghost{background:transparent;border:2px solid var(--white);color:var(--white)}
 .btn.ghost:hover{background:var(--white);color:var(--dark)}
+.btn.dark{background:var(--dark);color:var(--white)}
+.btn.dark:hover{background:#000}
 
-/* hero (main-site pattern) */
 .hero{position:relative;color:var(--white);background:var(--dark);display:flex;align-items:center;min-height:clamp(460px,calc(100svh - 205px),700px)}
 .hero > .wrap{width:100%}
 .hero-bg{position:absolute;inset:0;background:url('img/hero_home.jpg') center 42%/cover no-repeat}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.82) 0%,rgba(10,10,10,.64) 52%,rgba(10,10,10,.30) 100%)}
 .hero-in{position:relative;padding:56px 0;max-width:820px;width:100%}
-.eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--gold);margin-bottom:18px}
-.hero h1{color:var(--white);font-size:60px;font-weight:900;margin-bottom:22px;letter-spacing:-0.015em;line-height:1.06}
+.eyebrow{font-family:'Barlow',sans-serif;font-weight:700;letter-spacing:1.98px;text-transform:uppercase;font-size:11px;color:var(--gold);margin-bottom:16px}
+.hero h1{color:var(--white);font-size:60px;font-weight:900;line-height:1.06;letter-spacing:-0.015em;margin-bottom:20px}
 .hero h1 span{color:var(--gold);display:block}
-.hero .sub{font-size:21px;color:#f2f0ec;margin-bottom:10px}
-.hero .craft{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:700;color:var(--gold);margin-bottom:32px}
-.cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px}
-.rating{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.rating .stars{color:var(--gold);font-size:30px;letter-spacing:4px;line-height:1}
-.rating .r-num{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:800;color:var(--white)}
-.rating .r-label{font-size:16px;font-weight:600;color:#f2f0ec}
+.hero .sub{font-size:20px;color:#f2f0ec;margin-bottom:8px}
+.hero .craft{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:30px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.rating{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.rating .stars{color:var(--gold);font-size:26px;letter-spacing:3px;line-height:1}
+.rating .r-num{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:900;color:var(--white)}
+.rating .r-label{font-size:15px;font-weight:600;color:#f2f0ec}
 .rating .r-label b{color:var(--gold)}
 
-/* trust bar (main-site pattern) */
-.trustbar{background:var(--dark);color:#f2f0ec;border-top:1px solid #2c2c2c}
-.trustbar-in{display:flex;justify-content:space-between;gap:12px 26px;flex-wrap:wrap;padding:20px 0;font-size:15px;font-weight:600}
-.trustbar span::before{content:"✓";color:var(--gold);font-weight:800;margin-right:8px}
+.featurebar{background:var(--gold);color:var(--dark)}
+.featurebar-in{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;padding:15px 0;font-size:15px;font-weight:600}
+.featurebar span::before{content:"\2713";font-weight:800;margin-right:8px}
 
-/* sections */
-section{padding:92px 0}
-.sec-eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:12.5px;color:var(--gold-deep);margin-bottom:12px}
-section h2{font-size:42px;margin-bottom:14px;letter-spacing:-0.01em}
-section h2 em{font-style:italic;font-weight:700}
-.lede{color:var(--text-soft);max-width:680px;margin-bottom:42px;font-size:18.5px}
+section{padding:64px 0}
+section.tinted{background:var(--off)}
+.sec-eyebrow{font-family:'Barlow',sans-serif;font-weight:700;letter-spacing:1.98px;text-transform:uppercase;font-size:11px;color:var(--gold);margin-bottom:10px}
+section h2{font-size:30px;line-height:36px;font-weight:900;margin-bottom:12px}
+.lede{color:var(--text-soft);max-width:720px;margin-bottom:36px;font-size:17px}
 
-/* projects */
-.projects{background:var(--white)}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.card{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.10)}
-.card-body{padding:20px 22px 22px}
-.card-tag{display:inline-block;background:var(--gold);color:var(--dark);font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;border-radius:3px;margin-bottom:10px}
-.card h3{font-size:19px;margin-bottom:6px}
-.ba{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--white)}
-.ba img{height:270px;width:100%;object-fit:cover}
-.ba-chip{position:absolute;top:12px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.08em;padding:4px 10px;border-radius:3px}
-.ba-chip.before{left:12px;background:rgba(20,20,20,.85);color:var(--white)}
-.ba-chip.after{right:12px;background:var(--gold);color:var(--dark)}
-.stat-line{display:flex;gap:8px 18px;flex-wrap:wrap;font-size:14px;color:var(--text-soft);border-top:1px solid var(--border);margin-top:14px;padding-top:12px;font-weight:600}
+.card{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card-body{padding:18px 20px 20px}
+.card-tag{display:inline-block;background:var(--gold);color:var(--dark);font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.96px;text-transform:uppercase;padding:4px 9px;border-radius:3px;margin-bottom:9px}
+.card h3{font-size:16px;line-height:24px;font-weight:900;margin-bottom:4px}
+.ba{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.ba.single{grid-template-columns:1fr}
+.ba img{height:250px;width:100%;object-fit:cover}
+.ba-chip{position:absolute;top:10px;font-family:'Barlow',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.96px;padding:4px 9px;border-radius:3px}
+.ba-chip.before{left:10px;background:rgba(20,20,20,.85);color:var(--white)}
+.ba-chip.after{right:10px;background:var(--gold);color:var(--dark)}
+.stat-line{display:flex;gap:8px 16px;flex-wrap:wrap;font-size:13.5px;color:var(--text-soft);border-top:1px solid var(--border);margin-top:12px;padding-top:11px;font-weight:600}
 
-/* reviews */
-.reviews{background:var(--off)}
-.review-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:38px}
-.review-head .stars{color:var(--gold);font-size:32px;letter-spacing:4px;line-height:1}
-.review-head .r-num{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:800;color:var(--dark)}
-.review-head .r-label{font-size:17px;font-weight:600;color:var(--text-soft)}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.rev{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:30px;position:relative}
-.rev::before{content:"\201C";position:absolute;top:8px;right:20px;font-family:'Montserrat',sans-serif;font-size:64px;font-weight:800;color:var(--gold);opacity:.22;line-height:1}
-.rev .stars{color:var(--gold);font-size:16px;letter-spacing:2px;margin-bottom:12px}
-.rev p{font-size:16px;color:var(--text);margin-bottom:16px;line-height:1.65}
-.rev .who{font-size:14.5px;font-weight:700;color:var(--dark)}
+.review-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.review-head .stars{color:var(--gold);font-size:26px;letter-spacing:3px;line-height:1}
+.review-head .r-num{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:900}
+.review-head .r-label{font-size:16px;font-weight:600;color:var(--text-soft)}
+.rev{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:26px}
+.rev .stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:10px}
+.rev .praised{display:inline-block;background:var(--off);border:1px solid var(--border);border-radius:3px;font-size:11px;font-weight:700;color:var(--text-soft);padding:3px 9px;margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase}
+.rev p{font-size:15.5px;margin-bottom:14px}
+.rev .who{font-size:14px;font-weight:700}
 .rev .where{font-size:13px;color:var(--text-soft)}
-.rev .praised{display:inline-block;background:var(--off);border:1px solid var(--border);border-radius:3px;font-size:11.5px;font-weight:700;color:var(--text-soft);padding:3px 9px;margin-bottom:14px;letter-spacing:.04em;text-transform:uppercase}
 
-/* burned — light, on-brand */
-.burned{background:var(--white)}
-.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 26px;max-width:980px}
-.check{display:flex;gap:14px;align-items:flex-start;background:var(--off);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:4px;padding:22px 24px}
-.check .tick{color:var(--gold-deep);font-weight:800;font-size:19px;line-height:1.3}
-.check b{display:block;color:var(--dark);margin-bottom:4px;font-size:16.5px;font-family:'Montserrat',sans-serif;font-weight:700}
-.check span{font-size:15.5px;color:var(--text-soft)}
-.proof-quote{margin-top:30px;background:var(--off);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:4px;padding:24px 28px;max-width:980px}
-.proof-quote .pq-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
-.proof-quote p{font-size:16.5px;color:var(--text);margin-bottom:8px}
-.proof-quote .pq-who{font-size:14px;font-weight:700;color:var(--dark)}
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
+.check{display:flex;gap:13px;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:4px;padding:20px 22px}
+.check .tick{color:var(--gold);font-weight:800;font-size:18px;line-height:1.4}
+.check b{display:block;font-family:'Montserrat',sans-serif;font-size:16px;line-height:24px;font-weight:900;margin-bottom:4px}
+.check span{font-size:15px;color:var(--text-soft)}
 
-/* owner */
-.owner{background:var(--off)}
-.owner-in{display:flex;gap:36px;align-items:center;max-width:900px;margin:0 auto}
-.owner-photo{width:170px;height:170px;border-radius:50%;object-fit:cover;border:4px solid var(--white);box-shadow:0 4px 20px rgba(0,0,0,.12);flex-shrink:0}
-.owner h2{font-size:30px;margin-bottom:4px}
-.owner .role{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px}
-.owner p{color:var(--text-soft);font-size:17px;max-width:560px}
+.owner-in{display:flex;gap:40px;align-items:flex-start}
+.owner-photo{width:200px;height:200px;border-radius:4px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)}
+.owner-in h2{margin-bottom:2px}
+.owner .role{font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.98px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.owner p{color:var(--text-soft);font-size:16px;margin-bottom:12px;max-width:760px}
+.owner .pull{border-left:3px solid var(--gold);padding-left:16px;color:var(--dark);font-size:16.5px;font-style:italic;margin-top:16px}
 
-/* process — main-site clone */
-.how{background:var(--white);text-align:center}
-.how h2{margin-bottom:56px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;text-align:left;max-width:1120px;margin:0 auto}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
 .step{position:relative}
-.step .num{display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:var(--gold);color:var(--dark);font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;margin-bottom:20px}
-.step::after{content:"";position:absolute;top:29px;left:76px;right:-16px;height:1px;background:var(--border)}
+.step .num{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--dark);font-family:'Montserrat',sans-serif;font-weight:900;font-size:15px;margin-bottom:18px}
+.step::after{content:"";position:absolute;top:28px;left:72px;right:-14px;height:1px;background:var(--border)}
 .step:last-child::after{display:none}
-.step h3{font-size:20px;margin-bottom:10px}
-.step p{font-size:15.5px;color:var(--text-soft)}
-.how .btn{margin-top:52px}
+.step h3{font-size:16px;line-height:24px;font-weight:900;margin-bottom:8px}
+.step p{font-size:15px;color:var(--text-soft)}
 
-/* pricing */
-.cost{background:var(--off)}
-.cost .cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:1000px;margin-bottom:34px}
-.cost-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:28px 30px}
-.cost-card h3{font-size:19px;margin-bottom:14px}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px}
+.cost-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:26px 28px}
+.cost-card h3{font-size:16px;line-height:24px;font-weight:900;margin-bottom:12px}
 .cost-card ul{list-style:none}
-.cost-card li{padding:9px 0 9px 26px;position:relative;font-size:16px;color:var(--text);border-bottom:1px solid var(--border)}
+.cost-card li{padding:8px 0 8px 24px;position:relative;font-size:15.5px;border-bottom:1px solid var(--border)}
 .cost-card li:last-child{border-bottom:none}
-.cost-card li::before{content:"✓";color:var(--gold-deep);font-weight:800;position:absolute;left:2px}
-.promise-callout{background:var(--dark);color:var(--white);border-radius:4px;padding:32px 36px;max-width:1000px;border-left:5px solid var(--gold)}
-.promise-callout h3{color:var(--white);font-size:24px;margin-bottom:10px}
-.promise-callout p{color:#d9d4c8;font-size:16.5px;max-width:820px}
+.cost-card li::before{content:"\2713";color:var(--gold);font-weight:800;position:absolute;left:0}
+.promise-callout{background:var(--dark);color:var(--white);border-radius:4px;padding:28px 32px;border-left:3px solid var(--gold)}
+.promise-callout h3{color:var(--white);font-size:20px;line-height:28px;font-weight:900;margin-bottom:8px}
+.promise-callout p{color:#d9d4c8;font-size:16px;max-width:860px}
 
-/* quote compare */
-.compare{background:var(--white)}
-.quote-compare{max-width:980px;background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
-.qc-row{display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid var(--border)}
+.quote-compare{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--white)}
+.qc-row{display:grid;grid-template-columns:1fr 1.35fr;border-bottom:1px solid var(--border)}
 .qc-row:last-child{border-bottom:none}
-.qc-row.qc-head{background:var(--off);font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-soft)}
-.qc-row > div{padding:15px 20px;font-size:15.5px}
+.qc-row.qc-head{background:var(--off);font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-soft)}
+.qc-row > div{padding:14px 18px;font-size:15.5px}
 .qc-row .vague{color:var(--text-soft);font-style:italic;border-right:1px solid var(--border)}
-.qc-row .real{font-weight:600;color:var(--text)}
-.qc-row .real::before{content:"✓";color:var(--gold-deep);font-weight:800;margin-right:9px}
-.qc-close{margin-top:22px;max-width:780px;color:var(--text-soft);font-size:16px}
+.qc-row .real{font-weight:600}
+.qc-row .real::before{content:"\2713";color:var(--gold);font-weight:800;margin-right:8px}
+.qc-close{margin-top:20px;max-width:820px;color:var(--text-soft);font-size:16px}
 
-/* faq */
-.faq{background:var(--off)}
 .faq details{border-bottom:1px solid var(--border);max-width:900px}
-.faq summary{cursor:pointer;font-weight:600;font-size:17.5px;padding:19px 0;list-style:none;position:relative;padding-right:36px;font-family:'Montserrat',sans-serif;font-size:16px}
-.faq summary::after{content:"+";position:absolute;right:6px;top:15px;font-size:23px;color:var(--gold-deep);font-weight:700}
-.faq details[open] summary::after{content:"–"}
-.faq details p{padding:0 0 20px;color:var(--text-soft);font-size:16px;max-width:820px}
+.faq summary{cursor:pointer;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;line-height:24px;padding:18px 0;list-style:none;position:relative;padding-right:36px}
+.faq summary::after{content:"+";position:absolute;right:6px;top:15px;font-size:22px;color:var(--gold);font-weight:700}
+.faq details[open] summary::after{content:"\2013"}
+.faq details p{padding:0 0 18px;color:var(--text-soft);font-size:15.5px;max-width:840px}
 
-/* final cta */
-.final{background:var(--dark);color:var(--white);text-align:center}
-.final h2{color:var(--white);font-size:42px;margin-bottom:12px}
-.final h2 span{color:var(--gold)}
-.final p{color:#d9d4c8;margin-bottom:8px;font-size:18px}
-.final .season{font-weight:600;color:#f2f0ec;margin-bottom:30px}
+.final{background:var(--gold);color:var(--dark);text-align:center}
+.final h2{font-size:30px;line-height:36px;font-weight:900;margin-bottom:10px}
+.final p{font-size:17px;margin-bottom:6px}
+.final .season{font-weight:600;margin-bottom:26px}
 .final .cta-row{justify-content:center;margin-bottom:0}
-.final .alt-line{margin-top:24px;font-size:15.5px;color:#d6d1c6}
-.final .alt-line a{color:var(--gold);font-weight:600}
-.final .book-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;font-size:14.5px;font-weight:600;color:#f2f0ec;margin-top:34px}
-.final .book-trust span::before{content:"✓";color:var(--gold);font-weight:800;margin-right:7px}
+.final .alt-line{margin-top:22px;font-size:15px}
+.final .alt-line a{font-weight:700;text-decoration:underline}
 
-footer{background:#111;color:#a8a292;font-size:14px;padding:44px 0;text-align:center;border-top:1px solid #2e2e2e;line-height:2}
-footer img{height:44px;margin:0 auto 14px;opacity:.9}
+footer{background:var(--dark);color:#a8a292;font-size:14px;padding:40px 0;text-align:center;line-height:2}
+footer img{height:44px;margin:0 auto 12px;opacity:.9}
 footer b{color:#d8d3c6}
 footer a{color:#d8d3c6}
 
-/* sticky mobile bar */
 .sticky-cta{display:none}
-
-/* anchor offsets */
 #work,#reviews,#cost,#faq,#book{scroll-margin-top:120px}
 
 @media (max-width: 860px){
-  .anchors{display:none}
+  .wrap{padding:0 20px}
+  .nav{display:none}
   .utility .u-left{display:none}
-  .utility-in{justify-content:center}
-  .head-in > img{height:56px}
+  .utility-in{justify-content:center;gap:20px}
+  .head-in img.logo{height:56px}
   .head-in .btn{display:none}
-  .head-phone-m{display:block;font-weight:700;color:var(--dark);font-size:16px}
+  .head-phone-m{display:block;font-weight:700;font-size:16px}
   .hero{min-height:clamp(440px,calc(100svh - 190px),620px)}
-  .hero-bg::after{background:linear-gradient(180deg,rgba(10,10,10,.62) 0%,rgba(10,10,10,.72) 100%)}
-  .hero-in{padding:56px 0 44px}
+  .hero-in{padding:44px 0}
   .hero h1{font-size:34px;line-height:1.08;margin-bottom:16px}
-  .hero .sub{font-size:18px;margin-bottom:8px}
-  .hero .craft{font-size:16.5px;margin-bottom:26px}
-  .cta-row .btn{flex:1 1 100%;font-size:15px}
-  .rating .stars{font-size:24px}
-  .rating .r-num{font-size:22px}
-  .trustbar-in{justify-content:flex-start}
-  section{padding:56px 0}
-  section h2{font-size:30px}
-  .grid3,.rev-grid,.check-grid{grid-template-columns:1fr}
-  .ba img{height:230px}
-  .cost .cols{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr;gap:30px}
+  .hero .sub{font-size:17px}
+  .hero .craft{font-size:16px;margin-bottom:24px}
+  .cta-row .btn{flex:1 1 100%}
+  .featurebar-in{justify-content:flex-start;font-size:14px}
+  section{padding:48px 0}
+  section h2{font-size:24px;line-height:32px}
+  .grid3,.cols2,.check-grid{grid-template-columns:1fr}
+  .ba img{height:220px}
+  .steps{grid-template-columns:1fr;gap:26px}
   .step::after{display:none}
-  .owner-in{flex-direction:column;text-align:center;gap:20px}
-  .owner p{max-width:none}
+  .owner-in{flex-direction:column;gap:22px}
+  .owner-photo{width:100%;height:260px}
   .qc-row{grid-template-columns:1fr}
   .qc-row.qc-head{display:none}
-  .qc-row .vague{border-right:none;padding-bottom:4px}
-  .qc-row .real{padding-top:4px;padding-bottom:16px}
+  .qc-row .vague{border-right:none;padding-bottom:2px}
+  .qc-row .real{padding-top:2px;padding-bottom:14px}
   .sticky-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--white);border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(0,0,0,.10)}
-  .sticky-cta .call{flex:1;border:2px solid var(--dark);border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:var(--dark)}
-  .sticky-cta .btn{flex:1.4;font-size:14px;padding:15px 10px}
-  body{padding-bottom:76px}
-  footer{padding-bottom:60px}
+  .sticky-cta .call{flex:1;border:2px solid var(--dark);border-radius:3px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+  .sticky-cta .btn{flex:1.4;font-size:12px;padding:15px 10px}
+  body{padding-bottom:74px}
+  footer{padding-bottom:56px}
 }
-@media (min-width: 861px){
-  .head-phone-m{display:none}
-}
+@media (min-width: 861px){ .head-phone-m{display:none} }
 </style>
 </head>
 <body>
@@ -254,7 +217,7 @@ footer a{color:#d8d3c6}
       <span class="u-left">Professional Residential &amp; Commercial Painting</span>
       <span class="u-right">
         <a href="tel:18669927238"><span class="ccp-phone-swap">1-866-99-CRAFT</span></a>
-        <a href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af" class="dj-link">Schedule FREE Estimate &rarr;</a>
+        <a class="dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Schedule FREE Estimate &rarr;</a>
       </span>
     </div>
   </div>
@@ -263,12 +226,12 @@ footer a{color:#d8d3c6}
 <header>
   <div class="wrap">
     <div class="head-in">
-      <img src="img/logo.png" alt="Colour Craft Painting">
-      <nav class="anchors">
-        <a href="#work">Our Work</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#cost">Pricing</a>
-        <a href="#faq">FAQ</a>
+      <a href="https://colourcraftpainting.com/" target="_blank" rel="noopener"><img class="logo" src="img/logo.png" alt="Colour Craft Painting"></a>
+      <nav class="nav">
+        <a href="https://colourcraftpainting.com/our-work" target="_blank" rel="noopener">Our Work</a>
+        <a href="https://colourcraftpainting.com/reviews" target="_blank" rel="noopener">Reviews</a>
+        <a href="https://colourcraftpainting.com/about" target="_blank" rel="noopener">Why Us</a>
+        <a href="https://colourcraftpainting.com/contact" target="_blank" rel="noopener">Contact</a>
       </nav>
       <a class="head-phone-m" href="tel:18669927238"><span class="ccp-phone-swap">1-866-99-CRAFT</span></a>
       <a class="btn dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Free Estimate</a>
@@ -289,32 +252,31 @@ footer a{color:#d8d3c6}
         <a class="btn big ghost" href="tel:18669927238">Call <span class="ccp-phone-swap">1-866-99-CRAFT</span></a>
       </div>
       <div class="rating">
-        <span class="stars">★★★★★</span>
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <span class="r-num">4.9</span>
-        <span class="r-label">Average Google Rating · <b>187 Reviews</b></span>
+        <span class="r-label">Average Google Rating &middot; <b>187 Reviews</b></span>
       </div>
     </div>
   </div>
 </div>
 
-<div class="trustbar">
+<div class="featurebar">
   <div class="wrap">
-    <div class="trustbar-in">
+    <div class="featurebar-in">
       <span>Licensed &amp; Insured</span>
       <span>2-Year Warranty</span>
-      <span>Always On Time</span>
-      <span>Complete Cleanup</span>
-      <span>Transparent Pricing</span>
       <span>Free Estimates</span>
+      <span>Complete Cleanup</span>
+      <span>Always On Time</span>
     </div>
   </div>
 </div>
 
-<section class="projects" id="work">
+<section id="work">
   <div class="wrap">
     <div class="sec-eyebrow">Our Work</div>
-    <h2>Painted here, in your neighbourhood</h2>
-    <p class="lede">Real Richmond and Delta homes, painted by our crews.</p>
+    <h2>Our Work in Richmond &amp; Delta</h2>
+    <p class="lede">Real homes in your neighbourhood, painted by our crews. Every project is quoted individually, in writing.</p>
     <div class="grid3">
       <div class="card">
         <div class="ba">
@@ -324,7 +286,7 @@ footer a{color:#d8d3c6}
           <span class="ba-chip after">AFTER</span>
         </div>
         <div class="card-body">
-          <span class="card-tag">Steveston · Richmond</span>
+          <span class="card-tag">Steveston &middot; Richmond</span>
           <h3>Full Exterior Repaint</h3>
           <div class="stat-line"><span>$9,000&ndash;$13,500</span><span>2-year warranty</span></div>
         </div>
@@ -337,20 +299,17 @@ footer a{color:#d8d3c6}
           <span class="ba-chip after">AFTER</span>
         </div>
         <div class="card-body">
-          <span class="card-tag">Tsawwassen · Delta</span>
+          <span class="card-tag">Tsawwassen &middot; Delta</span>
           <h3>Full Exterior Repaint</h3>
           <div class="stat-line"><span>$11,000&ndash;$13,000</span><span>6 days</span><span>2-year warranty</span></div>
         </div>
       </div>
       <div class="card">
-        <div class="ba">
-          <img src="img/ray_b.jpg" alt="Stucco exterior before painting, Seafair Richmond BC" loading="lazy" width="480" height="360">
-          <img src="img/ray_a.jpg" alt="Finished luxury stucco exterior after, Seafair Richmond BC" loading="lazy" width="640" height="480">
-          <span class="ba-chip before">BEFORE</span>
-          <span class="ba-chip after">AFTER</span>
+        <div class="ba single">
+          <img src="img/ray_a.jpg" alt="Finished luxury stucco exterior, Seafair Richmond BC" loading="lazy" width="640" height="480">
         </div>
         <div class="card-body">
-          <span class="card-tag">Seafair · Richmond</span>
+          <span class="card-tag">Seafair &middot; Richmond</span>
           <h3>Luxury Stucco Exterior</h3>
           <div class="stat-line"><span>$16,000&ndash;$22,000</span><span>1 week</span><span>2-year warranty</span></div>
         </div>
@@ -359,32 +318,32 @@ footer a{color:#d8d3c6}
   </div>
 </section>
 
-<section class="reviews" id="reviews">
+<section class="tinted" id="reviews">
   <div class="wrap">
-    <div class="sec-eyebrow">Reviews</div>
-    <h2>What Richmond &amp; Delta homeowners say</h2>
+    <div class="sec-eyebrow">Customer Reviews</div>
+    <h2>Reviews of Colour Craft Painting</h2>
     <div class="review-head">
-      <span class="stars">★★★★★</span>
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
       <span class="r-num">4.9</span>
-      <span class="r-label">Average Google Rating · 187 Reviews</span>
+      <span class="r-label">average across 187+ verified Google reviews</span>
     </div>
-    <div class="rev-grid">
+    <div class="grid3">
       <div class="rev">
-        <div class="stars">★★★★★</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="praised">Praised: the estimate experience</div>
         <p>"The level of professionalism dealing with Jared was 5/5. He was respectful, punctual and did an extremely thorough estimate complete with photos, detailed description of work to be completed... His service inspires confidence from the start."</p>
         <div class="who">Marlene K.</div>
         <div class="where">Google review</div>
       </div>
       <div class="rev">
-        <div class="stars">★★★★★</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="praised">Praised: quality over price</div>
         <p>"They painted the outside of my house and did a great job. I was very impressed with the thoroughness of the assessment, the constant communication on the job... This company wasn't the cheapest quote I got but the quality of the work was great!"</p>
         <div class="who">Sheila D.</div>
         <div class="where">Google review</div>
       </div>
       <div class="rev">
-        <div class="stars">★★★★★</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="praised">Praised: clean site + communication</div>
         <p>"The crew and management were very professional. The workspace was kept clean and every thing was put back in place when finished... Management kept a very open communication line and the pricing was competitive. I would strongly recommend Jared, Chris and their team."</p>
         <div class="who">Mumtaz N.</div>
@@ -394,74 +353,71 @@ footer a{color:#d8d3c6}
   </div>
 </section>
 
-<section class="burned">
+<section>
   <div class="wrap">
     <div class="sec-eyebrow">Choosing a painter</div>
     <h2>Been burned by a painter before?</h2>
-    <p class="lede">You're not alone, and it's why we work the way we do. Here's what you should get from any painter before money changes hands. We hand you all four at the estimate.</p>
+    <p class="lede">You're not alone, and it's why we work the way we do. Here are four things worth asking any painter for before money changes hands. You get all four from us at the estimate.</p>
     <div class="check-grid">
-      <div class="check"><div class="tick">✓</div><div><b>An itemized written quote</b><span>Exactly what's being painted, prepped and repaired, with photos, so a low bid can't hide skipped prep.</span></div></div>
-      <div class="check"><div class="tick">✓</div><div><b>Proof of insurance</b><span>WorkSafeBC coverage and $5 million liability insurance, in writing.</span></div></div>
-      <div class="check"><div class="tick">✓</div><div><b>A written warranty</b><span>Our 2-year workmanship warranty is in plain language. If it fails, we come back and fix it.</span></div></div>
-      <div class="check"><div class="tick">✓</div><div><b>A price that doesn't move</b><span>The quote you approve is what you pay. No pressure to sign on the spot, ever.</span></div></div>
-    </div>
-    <div class="proof-quote">
-      <div class="pq-label">The warranty, honoured — from a Google review</div>
-      <p>"Some areas had failed with the paint application. I contacted Colour Craft to have these areas addressed under their written warranty and Emerson attended our residence and fixed the areas of concern and restored our home, deck and fence to the way it was. Thanks for the great job."</p>
-      <div class="pq-who">Franco D. · Google review</div>
+      <div class="check"><div class="tick">&#10003;</div><div><b>An itemized written scope</b><span>Every surface and every prep step listed by name, with photos, so a lower bid can't quietly leave work out.</span></div></div>
+      <div class="check"><div class="tick">&#10003;</div><div><b>Proof of insurance</b><span>WorkSafeBC coverage and $5 million liability insurance. Ask to see both documents, from anyone you hire.</span></div></div>
+      <div class="check"><div class="tick">&#10003;</div><div><b>A written warranty</b><span>Ours is a 2-year workmanship warranty in plain language. If the work fails, we come back and fix it.</span></div></div>
+      <div class="check"><div class="tick">&#10003;</div><div><b>To know who shows up</b><span>A trained, uniformed Colour Craft crew with a crew leader responsible for your project, not whoever was available that week.</span></div></div>
     </div>
   </div>
 </section>
 
-<section class="owner">
+<section class="tinted owner">
   <div class="wrap">
+    <div class="sec-eyebrow">Your local owner</div>
     <div class="owner-in">
-      <img class="owner-photo" src="img/jared2.jpg" alt="Jared Lim, owner of Colour Craft Painting Richmond and Delta" loading="lazy" width="600" height="600">
+      <img class="owner-photo" src="img/jared2.jpg" alt="Jared Lim, franchise owner of Colour Craft Painting Richmond and Delta" loading="lazy" width="600" height="600">
       <div>
         <h2>Jared Lim</h2>
-        <div class="role">Owner · Richmond &amp; Delta</div>
-        <p>I've been in the painting industry since 2012. The Jared in the reviews above is me, and the email at the bottom of this page comes straight to me.</p>
+        <div class="role">Franchise Owner &middot; Richmond &amp; Delta</div>
+        <p>I was born and raised in Richmond, and I have been building and leading service businesses for over a decade. I began in the painting industry in 2012 as a College Pro Painters franchise owner, and in my early twenties built one of the top performing franchises in that company's 45 year history, completing hundreds of projects.</p>
+        <p>After several years leading sales teams and coaching business owners, I came back to painting with Colour Craft. The Jared in the reviews above is me. I run the estimates myself, and the email at the bottom of this page comes straight to me.</p>
+        <p class="pull">"Service is about how people feel throughout the whole process. It's not just an end product."</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="how">
+<section>
   <div class="wrap">
-    <div class="sec-eyebrow">Our Process</div>
-    <h2>From Estimate to Final Coat, <em>Made Simple</em></h2>
+    <div class="sec-eyebrow">How It Works</div>
+    <h2>From Estimate to Final Coat</h2>
     <div class="steps">
       <div class="step">
         <div class="num">01</div>
         <h3>Free Estimate</h3>
-        <p>Book online or call. Your written quote follows within 24 hours of the visit.</p>
+        <p>Book online or call. We visit, walk the project with you, and your written quote follows within 24 hours.</p>
       </div>
       <div class="step">
         <div class="num">02</div>
         <h3>Plan &amp; Prepare</h3>
-        <p>We schedule around your availability and do the prep properly: washing, sanding and priming before any paint goes on. Haven't picked colours yet? We'll guide you.</p>
+        <p>We schedule around your availability and prep properly: washing, sanding and priming before any paint goes on. Haven't picked colours? We'll guide you.</p>
       </div>
       <div class="step">
         <div class="num">03</div>
-        <h3>Paint &amp; Communicate</h3>
+        <h3>Expert Execution</h3>
         <p>Our crews paint with care, keep you updated, and leave a clean job site at the end of every workday.</p>
       </div>
       <div class="step">
         <div class="num">04</div>
         <h3>Final Walkthrough</h3>
-        <p>We walk the finished project together and confirm every detail. Backed by our 2-year written workmanship warranty.</p>
+        <p>We walk the finished project together and confirm every detail, backed by the 2-year written warranty.</p>
       </div>
     </div>
-    <a class="btn big dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Schedule Your Free Estimate</a>
   </div>
 </section>
 
-<section class="cost" id="cost">
+<section class="tinted" id="cost">
   <div class="wrap">
     <div class="sec-eyebrow">Pricing</div>
     <h2>What does painting cost?</h2>
     <p class="lede">Every home is different, which is why we quote in person and in writing. But you should know what moves the number, and exactly what your written quote will include.</p>
-    <div class="cols">
+    <div class="cols2">
       <div class="cost-card">
         <h3>What moves the number</h3>
         <ul>
@@ -490,7 +446,7 @@ footer a{color:#d8d3c6}
   </div>
 </section>
 
-<section class="compare">
+<section>
   <div class="wrap">
     <div class="sec-eyebrow">Comparing quotes</div>
     <h2>How to tell a real quote from a vague one</h2>
@@ -507,10 +463,10 @@ footer a{color:#d8d3c6}
   </div>
 </section>
 
-<section class="faq" id="faq">
+<section class="tinted faq" id="faq">
   <div class="wrap">
-    <div class="sec-eyebrow">FAQ</div>
-    <h2>Questions homeowners ask us</h2>
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2>Frequently Asked Questions</h2>
     <details>
       <summary>Will the price change after I get my quote?</summary>
       <p>No. Your quote is a fixed written price. If you add work later, you approve a written change first.</p>
@@ -548,27 +504,21 @@ footer a{color:#d8d3c6}
 
 <section class="final" id="book">
   <div class="wrap">
-    <h2>Book your <span>free estimate</span></h2>
-    <p>A detailed written quote for your home, with no obligation.</p>
+    <h2>Ready to Get Started in Richmond &amp; Delta?</h2>
+    <p>Schedule your free estimate. A detailed written quote for your home, with no obligation.</p>
     <p class="season">Exterior slots are booking up ahead of the fall rain. The earlier your estimate, the earlier your project can be scheduled.</p>
     <div class="cta-row">
-      <a class="btn big dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Book Your Free Estimate</a>
-      <a class="btn big ghost" href="tel:18669927238">Call <span class="ccp-phone-swap">1-866-99-CRAFT</span></a>
+      <a class="btn big dark dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Schedule Free Estimate</a>
+      <a class="btn big dark" href="tel:18669927238">Call <span class="ccp-phone-swap">1-866-99-CRAFT</span></a>
     </div>
     <p class="alt-line">Prefer email? <a href="mailto:jared.lim@colourcraftpainting.com">jared.lim@colourcraftpainting.com</a> comes straight to Jared.</p>
-    <div class="book-trust">
-      <span>4.9★ Google Rating</span>
-      <span>2-Year Written Warranty</span>
-      <span>WCB + $5M Insured</span>
-      <span>Fixed Written Quotes</span>
-    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <img src="img/logo.png" alt="">
-    <b>Colour Craft Painting</b> · Richmond &amp; Delta, BC<br>
+    <b>Colour Craft Painting</b> &middot; Richmond &amp; Delta, BC<br>
     <a href="mailto:jared.lim@colourcraftpainting.com">jared.lim@colourcraftpainting.com</a>
   </div>
 </footer>
@@ -580,31 +530,22 @@ footer a{color:#d8d3c6}
 
 <script>
   (function(){
-    // Carry ad-click parameters through to the booking form links for attribution.
     var params = new URLSearchParams(location.search);
     var keep = [];
     params.forEach(function(v,k){
       if (/^(gclid|gbraid|wbraid|utm_\w+)$/i.test(k)) keep.push(k + '=' + encodeURIComponent(v));
     });
     if (keep.length) {
-      document.querySelectorAll('a.dj-link').forEach(function(a){
-        a.href = a.href + '&' + keep.join('&');
-      });
+      document.querySelectorAll('a.dj-link').forEach(function(a){ a.href = a.href + '&' + keep.join('&'); });
     }
-
-    // Geo headline match: ?geo=ladner|tsawwassen|steveston|richmond|delta swaps the H1 location.
     var geo = (params.get('geo') || '').toLowerCase();
     var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.'};
     if (geoNames[geo]) {
       var line = document.getElementById('geo-line');
       if (line) line.textContent = geoNames[geo];
     }
-
-    // Engagement event when a visitor heads to the booking form (not a conversion).
     document.querySelectorAll('a.dj-link').forEach(function(a){
-      a.addEventListener('click', function(){
-        if (typeof gtag === 'function') gtag('event', 'book_cta_click');
-      });
+      a.addEventListener('click', function(){ if (typeof gtag === 'function') gtag('event', 'book_cta_click'); });
     });
   })();
 </script>
