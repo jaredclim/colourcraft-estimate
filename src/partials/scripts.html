@@ -1,0 +1,35 @@
+<script>
+  (function(){
+    var params = new URLSearchParams(location.search);
+    var keep = [];
+    params.forEach(function(v,k){
+      if (/^(gclid|gbraid|wbraid|utm_\w+)$/i.test(k)) keep.push(k + '=' + encodeURIComponent(v));
+    });
+    if (keep.length) {
+      document.querySelectorAll('a.dj-link').forEach(function(a){ a.href = a.href + '&' + keep.join('&'); });
+    }
+    var geo = (params.get('geo') || '').toLowerCase();
+    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.'};
+    if (geoNames[geo]) {
+      var line = document.getElementById('geo-line');
+      if (line) line.textContent = geoNames[geo];
+    }
+    document.querySelectorAll('a.dj-link').forEach(function(a){
+      a.addEventListener('click', function(){ if (typeof gtag === 'function') gtag('event', 'book_cta_click'); });
+    });
+    // Mobile menu
+    var tog=document.querySelector('.nav-toggle'), mnav=document.querySelector('.mobile-nav');
+    if(tog&&mnav){tog.addEventListener('click',function(){
+      var open=!mnav.hasAttribute('hidden');
+      if(open){mnav.setAttribute('hidden','');tog.setAttribute('aria-expanded','false');}
+      else{mnav.removeAttribute('hidden');tog.setAttribute('aria-expanded','true');}
+    });}
+    // Services dropdown: keyboard/tap support alongside the hover rule
+    var trig=document.querySelector('.nav-trigger');
+    if(trig){trig.addEventListener('click',function(){
+      var d=trig.closest('.nav-drop');
+      var shown=d.classList.toggle('open');
+      trig.setAttribute('aria-expanded',shown?'true':'false');
+    });}
+  })();
+</script>

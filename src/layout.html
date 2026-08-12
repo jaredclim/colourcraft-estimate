@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<link rel="icon" href="img/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Barlow:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18373361083"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18373361083');
+  gtag('config', 'AW-18373361083/2VO7CKDk8N0cELv7jLlE', {
+    'phone_conversion_number': '1-866-99-CRAFT',
+    'phone_conversion_css_class': 'ccp-phone-swap',
+    // Click-to-call: the css_class swaps displayed text only, so rewrite the
+    // tel: href too or mobile taps dial the untracked number.
+    'phone_conversion_callback': function(formatted_number, mobile_number) {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+        a.href = 'tel:' + mobile_number.replace(/[^0-9+]/g,'');
+      });
+    }
+  });
+</script>
+
+<style>
+{{CSS}}
+</style>
+</head>
+<body>
+{{ICONS}}
+{{HEADER}}
+<main>
+{{BODY}}
+</main>
+
+{{FOOTER}}
+{{STICKY}}
+{{SCRIPTS}}
+</body>
+</html>
