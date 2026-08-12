@@ -58,11 +58,11 @@ header{position:sticky;top:0;background:var(--white);box-shadow:0 1px 0 var(--bo
 .btn.ghost:hover{background:var(--white);color:var(--dark)}
 
 /* hero (main-site pattern) */
-.hero{position:relative;color:var(--white);background:var(--dark);display:flex;align-items:center;min-height:700px}
+.hero{position:relative;color:var(--white);background:var(--dark);display:flex;align-items:center;min-height:clamp(460px,calc(100svh - 205px),700px)}
 .hero > .wrap{width:100%}
 .hero-bg{position:absolute;inset:0;background:url('img/hero_home.jpg') center 42%/cover no-repeat}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.82) 0%,rgba(10,10,10,.64) 52%,rgba(10,10,10,.30) 100%)}
-.hero-in{position:relative;padding:80px 0;max-width:820px;width:100%}
+.hero-in{position:relative;padding:56px 0;max-width:820px;width:100%}
 .eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--gold);margin-bottom:18px}
 .hero h1{color:var(--white);font-size:60px;font-weight:900;margin-bottom:22px;letter-spacing:-0.015em;line-height:1.06}
 .hero h1 span{color:var(--gold);display:block}
@@ -212,7 +212,7 @@ footer a{color:#d8d3c6}
   .head-in > img{height:56px}
   .head-in .btn{display:none}
   .head-phone-m{display:block;font-weight:700;color:var(--dark);font-size:16px}
-  .hero{min-height:600px}
+  .hero{min-height:clamp(440px,calc(100svh - 190px),620px)}
   .hero-bg::after{background:linear-gradient(180deg,rgba(10,10,10,.62) 0%,rgba(10,10,10,.72) 100%)}
   .hero-in{padding:56px 0 44px}
   .hero h1{font-size:34px;line-height:1.08;margin-bottom:16px}
