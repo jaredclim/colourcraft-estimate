@@ -1,5 +1,12 @@
 # Iteration Log — colourcraft-estimate LP
 
+## Round 7 — Jared's detailed feedback round (deployed 2026-08-11 night)
+
+Jared's first full review (14 points). Root theme: page must look like OUR site, not a generic LP. Rebuilt to main-site design language: gold utility bar + 76px-logo header clone; neighbourhood list and Quote Promise nav item removed; main-site hero pattern (big two-line H1, gold geo line, big star-rating block); dark icon trust bar; all 3 project cards now true dramatic front-elevation pairs (found Raymond after-06 front beauty shot + Andy charcoal->white transformation in the full photo sets); review labels consistent; burned section redesigned light/on-brand; owner section uses the zoomed headshot Jared emailed Brad July 26 (pulled from cc-gmail); process section cloned from main site (gold circles, connectors, italic accent); pricing redesigned (city-price list + cabinets strip killed, promise became the dark callout inside pricing, compare table own section in bordered card); embedded DripJobs form REMOVED per Jared (Basecoat-embed look) — all CTAs link out with gclid passthrough. Verified live: all images 200, zero broken after full scroll.
+
+Still open from his feedback: nothing structural — remaining items are the standing asks (GBP link, DJ form config, real-data pack).
+
+
 ## Round 6 — presentation elevation (deployed 2026-08-11 night)
 
 **Trigger:** Jared scored the page 60-70% of usable, gap = all four dimensions (visual, photos, copy, structure), bar = better than the main site.
