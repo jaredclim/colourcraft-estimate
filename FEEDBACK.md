@@ -1,5 +1,14 @@
 # Iteration Log — colourcraft-estimate LP
 
+## Round 6 — presentation elevation (deployed 2026-08-11 night)
+
+**Trigger:** Jared scored the page 60-70% of usable, gap = all four dimensions (visual, photos, copy, structure), bar = better than the main site.
+
+**Applied:** cinematic full-height hero using the site's Richmond craftsman hero shot (finished-home aspiration; crew-van shot moved to a dedicated trust band in the owner section at full width); typography scale up (H1 62px, section H2 44px, 92px section rhythm); taller project imagery with hover lift; editorial review-quote treatment; Steveston card upgraded to the front-garden after; real cabinet-kitchen "Interiors and cabinets too" strip in the cost section (skipped the site's stock-looking interior renders — real-only is the differentiator vs Warline); button depth; booking-frame gold top border. Rejected: stock interior imagery.
+
+**Process fix that caught a repeat:** the verify-after-push rule caught the new jpgs 404ing on production (plain `git add -A` skips *.jpg via the global gitignore — every NEW media asset needs `git add -f`). Fixed within minutes, verified zero broken images live after full scroll.
+
+
 ## Round 5 — FINAL (deployed 2026-08-11 evening)
 
 **Panel:** fresh-eyes avatar review (final-mile) + competitor re-verdict. Competitor verdict: **wins 5 of 6 head-to-heads, ties Hemlock** — and this round closed Hemlock's one remaining edge (pricing education) with the real-ranges list + the vague-vs-real quote comparison table (all rows restate existing verified claims; no invented numbers).
