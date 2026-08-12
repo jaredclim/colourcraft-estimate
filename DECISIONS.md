@@ -57,7 +57,7 @@ Removed and why: the Franco warranty review (a single job needing house, deck an
 ## 5. Tracking
 
 - `phone_conversion_callback` rewrites `tel:` hrefs. The css-class swap changes displayed text only, so without this, mobile taps dial the untracked number and record no call conversion.
-- `book_cta_click` fires on every CTA. This is an engagement event, not a conversion; the booking conversion needs the DripJobs redirect (see §7).
+- `book_cta_click` fires on every CTA. This is an engagement event, not a conversion. The form submit happens on dripjobs.com, so there is currently NO booking conversion recorded on this page; `thank-you.html` is deployed and waiting for the DripJobs redirect to be pointed at it (see §7).
 - gclid / gbraid / wbraid / utm_* pass through to every DripJobs link.
 - `?geo=ladner|tsawwassen|steveston|richmond|delta` swaps the H1 for ad-group message match.
 
@@ -73,7 +73,7 @@ Removed and why: the Franco warranty review (a single job needing house, deck an
 ## 7. Open, needs Jared
 
 1. Google Business Profile URL, to make 4.9 / 187+ verifiable (every reviewer's top trust gap).
-2. DripJobs ads-form config: 13 required fields across 5 steps, "State"/"Zip" labels, internal title "Scheduling - Richmond / Delta", required "How did you hear about us?" that gclid already answers, red validation before typing. Also set its redirect to `/thank-you.html` so bookings can be counted.
+2. DripJobs ads-form config (the booking form is a link-out, not embedded — the embedded look was rejected): 13 required fields across 5 steps, "State"/"Zip" labels, internal title "Scheduling - Richmond / Delta", required "How did you hear about us?" that gclid already answers, red validation before typing. Also set its redirect to `/thank-you.html` so bookings can be counted.
 3. Deposit / payment terms — the burned buyer's #1 unanswered question. Not invented here.
 4. Whether to answer "Do you use subcontractors?" and how. Competitors answer it "no"; ours needs Jared's wording.
 5. Real interior project photo + value, before interior ad groups run.
