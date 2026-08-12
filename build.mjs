@@ -22,6 +22,7 @@ const footer   = read('src/partials/footer.html');
 const sticky   = read('src/partials/sticky.html');
 const scripts  = read('src/partials/scripts.html');
 const layout   = read('src/layout.html');
+const pageend  = read('src/partials/pageend.html');
 
 // Nav is defined once here so every page shows the same items in the same order,
 // and so the current page can be marked without hand-editing each file.
@@ -72,7 +73,8 @@ for (const file of pages) {
   const desc  = meta(src, 'DESC');
   if (!title || !desc) throw new Error(`${file}: missing TITLE or DESC comment`);
 
-  const body = src.replace(/<!--[A-Z]+:[\s\S]*?-->\n?/g, '').trim();
+  const noEnd = /<!--NOPAGEEND-->/.test(src);
+  const body = src.replace(/<!--[A-Z]+:[\s\S]*?-->\n?/g, '').replace(/<!--NOPAGEEND-->\n?/g,'').trim() + (noEnd ? '' : '\n\n' + pageend);
 
   const html = layout
     .replace('{{TITLE}}', title)
