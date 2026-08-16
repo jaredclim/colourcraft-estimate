@@ -417,6 +417,14 @@ a.contact-row:hover{border-color:var(--gold)}
   .split-cta,.split-stats{padding:44px 24px}
 }
 
+/* Live review layer + competitor-round additions (2026-08-16) */
+.cta-note{font-size:13px;font-weight:600;color:rgba(255,255,255,.78);margin:-14px 0 24px;letter-spacing:.2px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+a.rating-link{color:inherit;text-decoration:none}
+a.rating-link:hover{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.avatar-img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.live-note{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.65);margin:0 0 18px}
+#live-reviews{margin-bottom:28px}
+
 </style>
 </head>
 <body>
@@ -496,10 +504,11 @@ a.contact-row:hover{border-color:var(--gold)}
         <a class="btn big dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Schedule Free Estimate</a>
         <a class="btn big ghost" href="tel:18669927238"><svg class="ic" width="16" height="16"><use href="#ic-phone"/></svg>Call <span class="ccp-phone-swap">1-866-99-CRAFT</span></a>
       </div>
+      <p class="cta-note">Free estimate &middot; No obligation &middot; Written quote within 24 hours</p>
       <div class="rating">
         <span class="stars-row"><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg></span>
-        <span class="r-num">4.9</span>
-        <span class="r-label"><b>4.9</b> across 66 Google reviews in Richmond &amp; Delta</span>
+        <span class="r-num" data-live="rating">4.9</span>
+        <a class="r-label rating-link" href="https://search.google.com/local/reviews?placeid=ChIJ0xkIeB3bhVQRavxBBp9vCPI" target="_blank" rel="noopener"><b data-live="rating">4.9</b> across <span data-live="count">67</span> Google reviews in Richmond &amp; Delta</a>
       </div>
     </div>
   </div>
@@ -509,7 +518,8 @@ a.contact-row:hover{border-color:var(--gold)}
 <div class="featurebar">
   <div class="wrap">
     <div class="featurebar-in">
-      <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>Licensed &amp; Insured</span>
+      <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>$5M Insured &amp; Licensed</span>
+      <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>WorkSafeBC Covered</span>
       <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>2-Year Warranty</span>
       <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>Free Estimates</span>
       <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>Complete Cleanup</span>
@@ -517,6 +527,37 @@ a.contact-row:hover{border-color:var(--gold)}
     </div>
   </div>
 </div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-eyebrow">Choosing a painter</div>
+    <h2>Been burned by a painter before?</h2>
+    <p class="lede">It's why we work the way we do. Here are four things worth asking any painter for before money changes hands. You get all four from us at the estimate.</p>
+    <div class="check-grid">
+      <div class="check"><div class="tick"><svg class="ic" width="18" height="18"><use href="#ic-check"/></svg></div><div><b>An itemized written scope</b><span>Every surface and every prep step listed by name, with photos, so a lower bid can't quietly leave work out.</span></div></div>
+      <div class="check"><div class="tick"><svg class="ic" width="18" height="18"><use href="#ic-check"/></svg></div><div><b>Proof of insurance</b><span>WorkSafeBC coverage and $5 million liability insurance. Ask to see both documents, from anyone you hire.</span></div></div>
+      <div class="check"><div class="tick"><svg class="ic" width="18" height="18"><use href="#ic-check"/></svg></div><div><b>A written warranty</b><span>Ours is a 2-year workmanship warranty in plain language. If the work fails, we come back and fix it.</span></div></div>
+      <div class="check"><div class="tick"><svg class="ic" width="18" height="18"><use href="#ic-check"/></svg></div><div><b>To know who shows up</b><span>A trained, uniformed Colour Craft crew with a crew leader responsible for your project, not whoever was available that week.</span></div></div>
+    </div>
+    <h3 class="sub-head">How to tell a real quote from a vague one</h3>
+    <p class="lede">If you're comparing quotes, the totals only mean something when the scopes match. Check every quote for these five things. Ours will have all five in writing.</p>
+    <div class="quote-compare">
+      <div class="qc-row qc-head"><div>If the quote just says</div><div>It should actually say</div></div>
+      <div class="qc-row"><div class="vague">"Paint the exterior"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>Every surface listed by name, with photos of what's included</div></div>
+      <div class="qc-row"><div class="vague">"Prep included"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>The actual prep, spelled out: washing, sanding, patching, caulking</div></div>
+      <div class="qc-row"><div class="vague">"Premium paint"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>The exact paint products being used</div></div>
+      <div class="qc-row"><div class="vague">"We'll clean up after"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>A clean site daily, and a final walkthrough together</div></div>
+      <div class="qc-row"><div class="vague">"Price may change depending on conditions"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>A fixed total that doesn't move after you approve it</div></div>
+    </div>
+    <p class="qc-close">Hold every painter to this standard, including us. If a quote can't show these five things, you can't know what the price actually buys.</p>
+
+    <div class="cta-band">
+      <p>Hold every painter to that standard.<span>Free on-site estimate. Detailed written quote with photos within 24 hours.</span></p>
+      <a class="btn big dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Book Free Estimate</a>
+    </div>
+
+  </div>
+</section>
 
 <section class="tinted" id="work">
   <div class="wrap">
@@ -574,8 +615,8 @@ a.contact-row:hover{border-color:var(--gold)}
     <h2>Reviews of Colour Craft Painting</h2>
     <div class="review-head">
       <span class="stars-row"><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg><svg class="ic" width="16" height="16"><use href="#ic-star"/></svg></span>
-      <span class="r-num">4.9</span>
-      <span class="r-label">4.9 across 66 Google reviews in Richmond &amp; Delta</span>
+      <span class="r-num" data-live="rating">4.9</span>
+      <a class="r-label rating-link" href="https://search.google.com/local/reviews?placeid=ChIJ0xkIeB3bhVQRavxBBp9vCPI" target="_blank" rel="noopener"><span data-live="rating">4.9</span> across <span data-live="count">67</span> Google reviews in Richmond &amp; Delta</a>
     </div>
     <div class="grid3">
       <div class="rev">
@@ -603,36 +644,6 @@ a.contact-row:hover{border-color:var(--gold)}
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="sec-eyebrow">Choosing a painter</div>
-    <h2>Been burned by a painter before?</h2>
-    <p class="lede">It's why we work the way we do. Here are four things worth asking any painter for before money changes hands. You get all four from us at the estimate.</p>
-    <div class="check-grid">
-      <div class="check"><div class="tick"><svg class="ic" width="18" height="18"><use href="#ic-check"/></svg></div><div><b>An itemized written scope</b><span>Every surface and every prep step listed by name, with photos, so a lower bid can't quietly leave work out.</span></div></div>
-      <div class="check"><div class="tick"><svg class="ic" width="18" height="18"><use href="#ic-check"/></svg></div><div><b>Proof of insurance</b><span>WorkSafeBC coverage and $5 million liability insurance. Ask to see both documents, from anyone you hire.</span></div></div>
-      <div class="check"><div class="tick"><svg class="ic" width="18" height="18"><use href="#ic-check"/></svg></div><div><b>A written warranty</b><span>Ours is a 2-year workmanship warranty in plain language. If the work fails, we come back and fix it.</span></div></div>
-      <div class="check"><div class="tick"><svg class="ic" width="18" height="18"><use href="#ic-check"/></svg></div><div><b>To know who shows up</b><span>A trained, uniformed Colour Craft crew with a crew leader responsible for your project, not whoever was available that week.</span></div></div>
-    </div>
-    <h3 class="sub-head">How to tell a real quote from a vague one</h3>
-    <p class="lede">If you're comparing quotes, the totals only mean something when the scopes match. Check every quote for these five things. Ours will have all five in writing.</p>
-    <div class="quote-compare">
-      <div class="qc-row qc-head"><div>If the quote just says</div><div>It should actually say</div></div>
-      <div class="qc-row"><div class="vague">"Paint the exterior"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>Every surface listed by name, with photos of what's included</div></div>
-      <div class="qc-row"><div class="vague">"Prep included"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>The actual prep, spelled out: washing, sanding, patching, caulking</div></div>
-      <div class="qc-row"><div class="vague">"Premium paint"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>The exact paint products being used</div></div>
-      <div class="qc-row"><div class="vague">"We'll clean up after"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>A clean site daily, and a final walkthrough together</div></div>
-      <div class="qc-row"><div class="vague">"Price may change depending on conditions"</div><div class="real"><svg class="ic" width="14" height="14" style="color:var(--gold);margin-right:8px"><use href="#ic-check"/></svg>A fixed total that doesn't move after you approve it</div></div>
-    </div>
-    <p class="qc-close">Hold every painter to this standard, including us. If a quote can't show these five things, you can't know what the price actually buys.</p>
-
-    <div class="cta-band">
-      <p>Hold every painter to that standard.<span>Free on-site estimate. Detailed written quote with photos within 24 hours.</span></p>
-      <a class="btn big dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/AppointmentRequests?companyId=8184029926526095e42d8f4b15ab1e&amp;formId=5618388306236b71df9755458b98af">Book Free Estimate</a>
-    </div>
-
-  </div>
-</section>
 
 <section class="owner tinted">
   <div class="wrap">
@@ -642,7 +653,6 @@ a.contact-row:hover{border-color:var(--gold)}
         <h2>Jared Lim</h2>
         <div class="role">Franchise Owner &middot; Richmond &amp; Delta</div>
         <p>Born and raised in Richmond, in the painting industry since 2012. The Jared in the reviews above is me. I run the estimates myself, and the email at the bottom of this page comes straight to me.</p>
-        <p>My focus is delivering a great experience on every project, with clear communication, organized job sites, and a high standard of work from start to finish.</p>
         <p>My focus is delivering a great experience on every project, with clear communication, organized job sites, and a high standard of work from start to finish.</p>
       </div>
     </div>
@@ -734,7 +744,7 @@ a.contact-row:hover{border-color:var(--gold)}
     </details>
     <details>
       <summary>Do you paint interiors too?</summary>
-      <p>Yes. Interior, exterior and cabinet painting across Richmond and Delta. The estimate and the written quote work exactly the same way.</p>
+      <p>Yes. Interior and exterior painting across Richmond and Delta. The estimate and the written quote work exactly the same way.</p>
     </details>
     <details>
       <summary>Who will actually be painting my home?</summary>
@@ -793,7 +803,7 @@ a.contact-row:hover{border-color:var(--gold)}
     </div>
   </div>
   <div class="foot-legal">
-    <div class="wrap">Colour Craft Painting &middot; Richmond &amp; Delta, BC</div>
+    <div class="wrap">&copy; 2026 Colour Craft Painting Co. All Rights Reserved. &middot; Richmond &amp; Delta, BC &middot; <a href="https://colourcraftpainting.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> &middot; <a href="https://colourcraftpainting.com/accessibility" target="_blank" rel="noopener">Accessibility</a></div>
   </div>
 </footer>
 
@@ -835,6 +845,44 @@ a.contact-row:hover{border-color:var(--gold)}
       var shown=d.classList.toggle('open');
       trig.setAttribute('aria-expanded',shown?'true':'false');
     });}
+  })();
+</script>
+
+<script>
+  // Live rating / count / newest reviews, mirrored from the main site's
+  // GBP-synced feed via our same-origin /api/reviews proxy. Static values
+  // in the markup are the fallback when the fetch fails (file://, outage).
+  (function(){
+    fetch('/api/reviews').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+      if (!d || !d.rating || !d.totalReviews) return;
+      document.querySelectorAll('[data-live="rating"]').forEach(function(el){ el.textContent = d.rating; });
+      document.querySelectorAll('[data-live="count"]').forEach(function(el){ el.textContent = d.totalReviews; });
+      var syncedEl = document.querySelector('[data-live="synced"]');
+      if (syncedEl && d.lastSyncedAt) {
+        var days = Math.floor((Date.now() - new Date(d.lastSyncedAt).getTime()) / 86400000);
+        syncedEl.textContent = days <= 0 ? 'Updated today' : days === 1 ? 'Updated yesterday' : 'Updated ' + days + ' days ago';
+      }
+      var grid = document.getElementById('live-grid');
+      if (!grid || !d.reviews || !d.reviews.length) return;
+      var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+      var star = '<svg class="ic" width="14" height="14"><use href="#ic-star"/></svg>';
+      grid.innerHTML = d.reviews.map(function(rv){
+        var stars = new Array(Math.max(1, Math.min(5, rv.rating || 5)) + 1).join(star);
+        var avatar = rv.authorPhoto
+          ? '<img class="avatar-img" src="' + esc(rv.authorPhoto) + '" alt="" loading="lazy" referrerpolicy="no-referrer">'
+          : '<span class="avatar" style="background:#6E5A3E">' + esc((rv.authorName || '?').charAt(0)) + '</span>';
+        var loc = 'Richmond &amp; Delta' + (rv.relativeTime ? ' &middot; ' + esc(rv.relativeTime) : '');
+        return '<div class="revd"><div class="revd-head">' + avatar + '<div><b>' + esc(rv.authorName) + '</b><span class="loc">' + loc + '</span></div><svg class="ic gmark" width="18" height="18"><use href="#ic-google"/></svg></div><div class="stars-row">' + stars + '</div><p>"' + esc(rv.text) + '"</p></div>';
+      }).join('');
+      var names = d.reviews.map(function(rv){ return (rv.authorName || '').trim().toLowerCase(); });
+      document.querySelectorAll('.rev-grid-dark:not(#live-grid) .revd b').forEach(function(b){
+        if (names.indexOf(b.textContent.trim().toLowerCase()) !== -1) {
+          var card = b.closest('.revd');
+          if (card) card.parentNode.removeChild(card);
+        }
+      });
+      document.getElementById('live-reviews').hidden = false;
+    }).catch(function(){});
   })();
 </script>
 

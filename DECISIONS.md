@@ -44,7 +44,9 @@ Sources are marked:
 
 ## 3. Section order
 
-Hero → feature bar → Our Work → Reviews → Been burned (incl. quote comparison) → Owner → Process → Pricing → FAQ → gold CTA → footer.
+Hero → feature bar → Been burned (incl. quote comparison) → Our Work → Reviews → Owner → Process → Pricing → FAQ → gold CTA → footer.
+
+**(2026-08-16, Jared-approved competitor round)** Been burned moved from slot 4 to slot 2: WOW 1 DAY leads its body with problem copy before any proof, and ours is the stronger version of that device. The original proof-first rationale below is superseded for slot order; proof still precedes pricing and the ask.
 
 Proof (work, reviews) precedes argument because paid traffic arrives cold. The vetting section and the quote-comparison table were merged: they are the same argument (what to demand of any painter) and were previously told twice, ~4,000px apart. Pricing sits late because it answers a question the reader only asks once they believe the work is good, and it now opens with the fixed-price promise and the three real project ranges. Backgrounds alternate white / `#F9F8F6` per [SITE]; the final CTA band is gold per [SITE] (the location page's CTA is gold, not dark).
 
@@ -176,3 +178,25 @@ Applied instead (not site copy, or factually wrong):
 - Two weakest gallery tiles on Our Work swapped for stronger afters from the
   same projects' published sets.
 - Tap targets: split-band inline links and band buttons to 44px minimum.
+
+
+---
+
+# Competitor round + live review layer (2026-08-16, Jared: "make all the improvements")
+
+All five recommendations from the 5-competitor sweep (Pro Works, WOW 1 DAY, 4C, BestHousePainting, Maple Brothers) applied, plus the live layer Jared asked for:
+
+1. **Review proof hyperlinked to Google everywhere** (index hero + dark band, service hero proof lines, page-end strips, reviews page). URL is the canonical place-review link built from the placeId in the parent's own review API (`ChIJ0xkIeB3bhVQRavxBBp9vCPI`), verified resolving. Pattern grounded in Maple Brothers (every testimonial deep-links) and 4C (hero count links).
+2. **Featurebar chips now numeric**: "Licensed & Insured" → "$5M Insured & Licensed" + new "WorkSafeBC Covered" chip, all 7 chrome-bearing pages. Both facts already on why-us/contact. (Deliberate departure from the parent featurebar's generic "Licensed & Insured" — Maple/4C pattern.)
+3. **"Fixed written price" added to service-page hero proof lines** (4C's under-H1 pattern; the fact is the site's own fixed-price promise).
+4. **CTA microcopy under hero buttons**: index "Free estimate · No obligation · Written quote within 24 hours"; service pages trimmed to "Free estimate · No obligation" because their proof line already carries the 24-hour promise (BestHousePainting's friction-killer pattern).
+5. **Been burned → slot 2** (see §3).
+
+**Live review layer** (Jared: "same way as the main site — pulling live, updates in real time, new reviews get pulled in"):
+- The parent API (`colourcraftpainting.com/api/trpc/reviews.getAll`) is GBP-synced daily (~6am) and returns live meta (rating, totalReviews) + the 5 newest reviews per franchise. It sends no CORS headers, so pages can't read it cross-origin; `api/reviews.js` (Vercel serverless, s-maxage 6h + SWR 24h) proxies it same-origin and trims to Richmond & Delta.
+- Every rating and count instance in the markup is wrapped in `[data-live="rating"]`/`[data-live="count"]` spans; the shared script hydrates them on load. The static values (currently 4.9 / 67, verified 2026-08-16) are the no-JS/outage fallback and should be re-synced whenever someone is editing anyway.
+- /reviews gets a "Newest reviews, pulled live from our Google Business Profile · Updated today/N days ago" section rendering the live 5 (Google avatars, relative dates), deduping any curated card by the same author. Curated wall below stays as depth. Live section stays hidden unless data arrives.
+- No review filtering in the proxy beyond non-empty text: what Google shows, we show — same exposure as the parent.
+- "municipally licensed" (why-us) confirmed TRUE by Jared 2026-08-16 — stays.
+
+**New deliberate departures** (extends §6): footer legal row links Privacy Policy + Accessibility to the parent site (the only two off-domain links on the mini-site — legal parity beats the closed-loop rule for these); GBP review links leave the funnel by design (verifiable proof is the point).

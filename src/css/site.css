@@ -382,3 +382,11 @@ a.contact-row:hover{border-color:var(--gold)}
   .stat-grid{grid-template-columns:repeat(2,1fr);gap:28px}
   .split-cta,.split-stats{padding:44px 24px}
 }
+
+/* Live review layer + competitor-round additions (2026-08-16) */
+.cta-note{font-size:13px;font-weight:600;color:rgba(255,255,255,.78);margin:-14px 0 24px;letter-spacing:.2px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+a.rating-link{color:inherit;text-decoration:none}
+a.rating-link:hover{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.avatar-img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.live-note{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.65);margin:0 0 18px}
+#live-reviews{margin-bottom:28px}

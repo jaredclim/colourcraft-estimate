@@ -1,5 +1,19 @@
 # Iteration Log — colourcraft-estimate LP
 
+## Round 8 — full-site audit vs competitors + parent site (2026-08-16, fixes staged NOT deployed)
+
+Jared's directive: full scan of every page vs competitors, strategy, and colourcraftpainting.com — indistinguishability bar. Three verification tracks: (1) image audit — all 56 images on all 9 pages contact-sheeted and personally viewed, zero sideways/misoriented; every questioned image (interior set, deck pair, arbor, balusters) traced to the parent site's own asset library (idx.js manifest / live pages), so photo provenance is fully parent-aligned; (2) competitor sweep — Pro Works, WOW 1 DAY, 4C, BestHousePainting, Maple Brothers; (3) parent-site alignment audit incl. the live review API.
+
+Fixed this round (source + rebuilt, awaiting deploy approval):
+- Duplicated owner paragraph on index (lines 645-646 class bug) — deleted one.
+- Review count 66 -> 67 sitewide (verified against parent /api/trpc/reviews.getAll: Richmond & Delta totalReviews 67, GBP-synced 2026-08-16).
+- Sheila Davis full review on /reviews restored to true verbatim ("(things i had elected to do myself)" had been silently elided).
+- Footer legal row added for parent parity (© line + Privacy Policy + Accessibility links to parent, new tab — the two legal links are the one deliberate exception to the zero-off-domain-links model).
+- Index FAQ no longer claims cabinet painting (no cabinet crew in territory; cabinet estimates go to Brad — paid pages must not promote it).
+- g-rd-2 alt corrected ("front elevation" -> "exterior"; photo is not a front elevation).
+
+Flagged for Jared, not changed: "municipally licensed" claim on why-us (parent never claims it; unverified); CTA label drift vs parent ("Book Free Estimate" vs parent's "Schedule Free Estimate" pattern); reviews page's own page-end review strip repeats 3 reviews from the grid above; George Samson 2-word review card (swap candidate: Richard Huang's newest R&D review, on the parent, absent here); em-dash flattening on parent-verbatim sentences (accepted fingerprint — voice ban governs); excerpt cards trim quotes without ellipsis in two places.
+
 ## Round 7 — Jared's detailed feedback round (deployed 2026-08-11 night)
 
 Jared's first full review (14 points). Root theme: page must look like OUR site, not a generic LP. Rebuilt to main-site design language: gold utility bar + 76px-logo header clone; neighbourhood list and Quote Promise nav item removed; main-site hero pattern (big two-line H1, gold geo line, big star-rating block); dark icon trust bar; all 3 project cards now true dramatic front-elevation pairs (found Raymond after-06 front beauty shot + Andy charcoal->white transformation in the full photo sets); review labels consistent; burned section redesigned light/on-brand; owner section uses the zoomed headshot Jared emailed Brad July 26 (pulled from cc-gmail); process section cloned from main site (gold circles, connectors, italic accent); pricing redesigned (city-price list + cabinets strip killed, promise became the dark callout inside pricing, compare table own section in bordered card); embedded DripJobs form REMOVED per Jared (Basecoat-embed look) — all CTAs link out with gclid passthrough. Verified live: all images 200, zero broken after full scroll.

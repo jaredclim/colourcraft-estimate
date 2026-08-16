@@ -417,6 +417,14 @@ a.contact-row:hover{border-color:var(--gold)}
   .split-cta,.split-stats{padding:44px 24px}
 }
 
+/* Live review layer + competitor-round additions (2026-08-16) */
+.cta-note{font-size:13px;font-weight:600;color:rgba(255,255,255,.78);margin:-14px 0 24px;letter-spacing:.2px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+a.rating-link{color:inherit;text-decoration:none}
+a.rating-link:hover{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.avatar-img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.live-note{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.65);margin:0 0 18px}
+#live-reviews{margin-bottom:28px}
+
 </style>
 </head>
 <body>
@@ -507,7 +515,8 @@ a.contact-row:hover{border-color:var(--gold)}
 <div class="featurebar">
   <div class="wrap">
     <div class="featurebar-in">
-      <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>Licensed &amp; Insured</span>
+      <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>$5M Insured &amp; Licensed</span>
+      <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>WorkSafeBC Covered</span>
       <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>2-Year Warranty</span>
       <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>Free Estimates</span>
       <span><svg class="ic" width="14" height="14"><use href="#ic-check"/></svg>Complete Cleanup</span>
@@ -632,7 +641,7 @@ a.contact-row:hover{border-color:var(--gold)}
     <div class="review-head">
       <span class="stars-row"><svg class="ic" width="15" height="15"><use href="#ic-star"/></svg><svg class="ic" width="15" height="15"><use href="#ic-star"/></svg><svg class="ic" width="15" height="15"><use href="#ic-star"/></svg><svg class="ic" width="15" height="15"><use href="#ic-star"/></svg><svg class="ic" width="15" height="15"><use href="#ic-star"/></svg></span>
       <span class="r-num">4.9</span>
-      <span class="r-label">4.9 across 66 Google reviews in Richmond &amp; Delta</span>
+      <a class="r-label rating-link" href="https://search.google.com/local/reviews?placeid=ChIJ0xkIeB3bhVQRavxBBp9vCPI" target="_blank" rel="noopener"><span data-live="rating">4.9</span> across <span data-live="count">67</span> Google reviews in Richmond &amp; Delta</a>
     </div>
     <div class="grid3">
       <div class="rev">
@@ -694,7 +703,7 @@ a.contact-row:hover{border-color:var(--gold)}
     </div>
   </div>
   <div class="foot-legal">
-    <div class="wrap">Colour Craft Painting &middot; Richmond &amp; Delta, BC</div>
+    <div class="wrap">&copy; 2026 Colour Craft Painting Co. All Rights Reserved. &middot; Richmond &amp; Delta, BC &middot; <a href="https://colourcraftpainting.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> &middot; <a href="https://colourcraftpainting.com/accessibility" target="_blank" rel="noopener">Accessibility</a></div>
   </div>
 </footer>
 
@@ -736,6 +745,44 @@ a.contact-row:hover{border-color:var(--gold)}
       var shown=d.classList.toggle('open');
       trig.setAttribute('aria-expanded',shown?'true':'false');
     });}
+  })();
+</script>
+
+<script>
+  // Live rating / count / newest reviews, mirrored from the main site's
+  // GBP-synced feed via our same-origin /api/reviews proxy. Static values
+  // in the markup are the fallback when the fetch fails (file://, outage).
+  (function(){
+    fetch('/api/reviews').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+      if (!d || !d.rating || !d.totalReviews) return;
+      document.querySelectorAll('[data-live="rating"]').forEach(function(el){ el.textContent = d.rating; });
+      document.querySelectorAll('[data-live="count"]').forEach(function(el){ el.textContent = d.totalReviews; });
+      var syncedEl = document.querySelector('[data-live="synced"]');
+      if (syncedEl && d.lastSyncedAt) {
+        var days = Math.floor((Date.now() - new Date(d.lastSyncedAt).getTime()) / 86400000);
+        syncedEl.textContent = days <= 0 ? 'Updated today' : days === 1 ? 'Updated yesterday' : 'Updated ' + days + ' days ago';
+      }
+      var grid = document.getElementById('live-grid');
+      if (!grid || !d.reviews || !d.reviews.length) return;
+      var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+      var star = '<svg class="ic" width="14" height="14"><use href="#ic-star"/></svg>';
+      grid.innerHTML = d.reviews.map(function(rv){
+        var stars = new Array(Math.max(1, Math.min(5, rv.rating || 5)) + 1).join(star);
+        var avatar = rv.authorPhoto
+          ? '<img class="avatar-img" src="' + esc(rv.authorPhoto) + '" alt="" loading="lazy" referrerpolicy="no-referrer">'
+          : '<span class="avatar" style="background:#6E5A3E">' + esc((rv.authorName || '?').charAt(0)) + '</span>';
+        var loc = 'Richmond &amp; Delta' + (rv.relativeTime ? ' &middot; ' + esc(rv.relativeTime) : '');
+        return '<div class="revd"><div class="revd-head">' + avatar + '<div><b>' + esc(rv.authorName) + '</b><span class="loc">' + loc + '</span></div><svg class="ic gmark" width="18" height="18"><use href="#ic-google"/></svg></div><div class="stars-row">' + stars + '</div><p>"' + esc(rv.text) + '"</p></div>';
+      }).join('');
+      var names = d.reviews.map(function(rv){ return (rv.authorName || '').trim().toLowerCase(); });
+      document.querySelectorAll('.rev-grid-dark:not(#live-grid) .revd b').forEach(function(b){
+        if (names.indexOf(b.textContent.trim().toLowerCase()) !== -1) {
+          var card = b.closest('.revd');
+          if (card) card.parentNode.removeChild(card);
+        }
+      });
+      document.getElementById('live-reviews').hidden = false;
+    }).catch(function(){});
   })();
 </script>
 
