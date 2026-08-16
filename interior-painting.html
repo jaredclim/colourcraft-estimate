@@ -770,6 +770,11 @@ a.rating-link:hover{text-decoration:underline;text-decoration-color:var(--gold);
       var line = document.getElementById('geo-line');
       if (line) line.textContent = geoNames[geo];
     }
+    if (geo === 'delta' || geo === 'ladner' || geo === 'tsawwassen') {
+      var workGrid = document.querySelector('#work .grid3');
+      var deltaCard = workGrid && workGrid.querySelector('[data-city="delta"]');
+      if (workGrid && deltaCard) workGrid.insertBefore(deltaCard, workGrid.firstElementChild);
+    }
     document.querySelectorAll('a.dj-link').forEach(function(a){
       a.addEventListener('click', function(){ if (typeof gtag === 'function') gtag('event', 'book_cta_click'); });
     });
