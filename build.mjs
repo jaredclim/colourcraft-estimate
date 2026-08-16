@@ -27,13 +27,13 @@ const pageend  = read('src/partials/pageend.html');
 // Nav is defined once here so every page shows the same items in the same order,
 // and so the current page can be marked without hand-editing each file.
 const NAV = [
-  { label: 'Exterior Painting',    href: '/exterior-painting.html',    group: 'Services' },
-  { label: 'Interior Painting',    href: '/interior-painting.html',    group: 'Services' },
-  { label: 'Deck & Fence Painting',href: '/deck-fence-painting.html',  group: 'Services' },
-  { label: 'Our Work',             href: '/our-work.html' },
-  { label: 'Reviews',              href: '/reviews.html' },
-  { label: 'Why Us',               href: '/why-us.html' },
-  { label: 'Contact',              href: '/contact.html' },
+  { label: 'Exterior Painting',    href: '/exterior-painting',    group: 'Services' },
+  { label: 'Interior Painting',    href: '/interior-painting',    group: 'Services' },
+  { label: 'Deck & Fence Painting',href: '/deck-fence-painting',  group: 'Services' },
+  { label: 'Our Work',             href: '/our-work' },
+  { label: 'Reviews',              href: '/reviews' },
+  { label: 'Why Us',               href: '/why-us' },
+  { label: 'Contact',              href: '/contact' },
 ];
 
 function buildNav(currentHref) {
@@ -68,7 +68,7 @@ let built = 0;
 for (const file of pages) {
   const src = read(`src/pages/${file}`);
   const outName = file;
-  const href = '/' + file;
+  const href = file === 'index.html' ? '/' : '/' + file.replace(/\.html$/, '');
   const title = meta(src, 'TITLE');
   const desc  = meta(src, 'DESC');
   if (!title || !desc) throw new Error(`${file}: missing TITLE or DESC comment`);
