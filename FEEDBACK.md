@@ -1,5 +1,11 @@
 # Iteration Log — colourcraft-estimate LP
 
+## Round 9 — competitor round + live review layer DEPLOYED (2026-08-16 afternoon)
+
+Jared: "make all the improvements based on competitor analysis... It's fine. A municipal licence is true... Can we set it up the same way that we have on our main site, where it's actually pulling live?"
+
+Shipped (commit b0adff9, verified live post-deploy): Round 8's six audit fixes + all five competitor recommendations (GBP-linked review proof everywhere, numeric featurebar chips, fixed-price in service hero proof lines, CTA microcopy, Been burned to slot 2) + the live review layer (api/reviews.js proxy over the parent's GBP-synced feed, data-live hydration sitewide, 5-newest live section on /reviews with avatar photos, relative dates, curated-wall dedupe). Live verification: /api/reviews returns 4.9 / 67 / synced-today with Richard Huang newest; index hero hydrates and links to the Google reviews page; /reviews live section visible, 4 duplicate curated cards auto-removed; zero console errors. "municipally licensed" on why-us confirmed TRUE by Jared — stays. Full decisions detail in DECISIONS.md ("Competitor round + live review layer").
+
 ## Round 8 — full-site audit vs competitors + parent site (2026-08-16, fixes staged NOT deployed)
 
 Jared's directive: full scan of every page vs competitors, strategy, and colourcraftpainting.com — indistinguishability bar. Three verification tracks: (1) image audit — all 56 images on all 9 pages contact-sheeted and personally viewed, zero sideways/misoriented; every questioned image (interior set, deck pair, arbor, balusters) traced to the parent site's own asset library (idx.js manifest / live pages), so photo provenance is fully parent-aligned; (2) competitor sweep — Pro Works, WOW 1 DAY, 4C, BestHousePainting, Maple Brothers; (3) parent-site alignment audit incl. the live review API.
