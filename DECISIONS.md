@@ -200,3 +200,24 @@ All five recommendations from the 5-competitor sweep (Pro Works, WOW 1 DAY, 4C, 
 - "municipally licensed" (why-us) confirmed TRUE by Jared 2026-08-16 — stays.
 
 **New deliberate departures** (extends §6): footer legal row links Privacy Policy + Accessibility to the parent site (the only two off-domain links on the mini-site — legal parity beats the closed-loop rule for these); GBP review links leave the funnel by design (verifiable proof is the point).
+
+## Our Work full gallery (2026-08-16 evening, Jared-directed)
+
+Expanded from 5 site-published projects to **21 real projects** sourced directly from the
+Drive Project Photos folder (Jared: don't wait for Brad's site publishing pipeline; no
+click-through pages, no SEO — before/after or after-only cards with honest labels).
+
+- Every image personally reviewed via contact sheets (20 client folders, 335 originals,
+  two sweeps — Jared uploaded 86 more photos mid-session incl. befores he shot at estimates).
+- Pair selection rule: same elevation, matched brightness, no ladders/equipment in afters
+  (Amanda's dark backlit before and Kathy's wrong-elevation after were swapped for honest frames).
+- Scope-accuracy rule (Jared): descriptions must state actual scope — colour match, trim-only,
+  doors-only — verified against DripJobs work orders before publishing, so nobody looks at a
+  trim job and wonders why the siding still looks aged. Card copy for smaller-scope jobs is
+  patched only from work-order data, never inferred from photos alone.
+- Values from the CC Lead Tracker In Production tab, shown as ranges per the marketing-copy rule.
+- Excluded: Paul Morizawa (Jared moved to "1. Excluding" folder), Bob Besterd exterior (subtle
+  delta, equipment in befores), church (commercial interior — held as interior-page candidate),
+  Brian Connors + David Richards (awaiting Chris's befores), Val Smith (SSWR page anchor later).
+- Jack Kawabata's bridge/fence/gate pairs earmarked for the deck-fence page, not Our Work.
+- Hero background upgraded to Kathy front elevation with the CC lawn sign in frame.
