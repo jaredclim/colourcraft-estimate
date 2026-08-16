@@ -44,9 +44,9 @@ Sources are marked:
 
 ## 3. Section order
 
-Hero → feature bar → Been burned (incl. quote comparison) → Our Work → Reviews → Owner → Process → Pricing → FAQ → gold CTA → footer.
+Hero → feature bar → Our Work → Been burned (incl. quote comparison) → Reviews → Owner → Process → Pricing → FAQ → gold CTA → footer.
 
-**(2026-08-16, Jared-approved competitor round)** Been burned moved from slot 4 to slot 2: WOW 1 DAY leads its body with problem copy before any proof, and ours is the stronger version of that device. The original proof-first rationale below is superseded for slot order; proof still precedes pricing and the ask.
+**(2026-08-16 evening, Jared-approved refinement)** Final order: Our Work slot 2, Been burned slot 3. The morning move (burned to slot 2, WOW-inspired) was refined after fold-level census: Pro Works — the only ads-LP specialist in market — runs reviews-first in slot 2, and WOW's problem-first is one sentence, not a five-screen section. Sequence logic: proof (priced local projects, thumb-stopping on mobile) → standards (the checklist lands harder from a proven operator) → confirmation (reviews echo the checklist).
 
 Proof (work, reviews) precedes argument because paid traffic arrives cold. The vetting section and the quote-comparison table were merged: they are the same argument (what to demand of any painter) and were previously told twice, ~4,000px apart. Pricing sits late because it answers a question the reader only asks once they believe the work is good, and it now opens with the fixed-price promise and the three real project ranges. Backgrounds alternate white / `#F9F8F6` per [SITE]; the final CTA band is gold per [SITE] (the location page's CTA is gold, not dark).
 
