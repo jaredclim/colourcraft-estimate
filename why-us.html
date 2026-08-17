@@ -511,6 +511,11 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
 #reviews .rev{padding:20px}
 #reviews .read-all{margin-top:18px}
 
+/* Review theme chip sits in the card's top-right, not under the stars */
+#reviews .rev{position:relative}
+#reviews .rev .praised{position:absolute;top:18px;right:18px;margin:0}
+#reviews .rev .stars-row{margin-bottom:10px}
+
 </style>
 </head>
 <body>
