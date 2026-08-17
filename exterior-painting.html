@@ -916,6 +916,20 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
 </script>
 
 <script>
+  (function(){
+    window.tidyRows = function(){
+      var grid = document.getElementById('live-grid');
+      if (!grid) return;
+      var cards = [].slice.call(grid.querySelectorAll('.revd'));
+      cards.forEach(function(c){ c.style.display = ''; });
+      var w = window.innerWidth;
+      var cols = w >= 1024 ? 3 : (w >= 768 ? 2 : 1);
+      var extra = cards.length % cols;
+      if (extra) cards.slice(cards.length - extra).forEach(function(c){ c.style.display = 'none'; });
+    };
+    window.addEventListener('resize', function(){ window.tidyRows(); });
+    document.addEventListener('DOMContentLoaded', function(){ window.tidyRows(); });
+  })();
   // Live rating / count / newest reviews, mirrored from the main site's
   // GBP-synced feed via our same-origin /api/reviews proxy. Static values
   // in the markup are the fallback when the fetch fails (file://, outage).
@@ -930,25 +944,29 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
         syncedEl.textContent = days <= 0 ? 'Updated today' : days === 1 ? 'Updated yesterday' : 'Updated ' + days + ' days ago';
       }
       var grid = document.getElementById('live-grid');
-      if (!grid || !d.reviews || !d.reviews.length) return;
+      if (!grid || !d.reviews || !d.reviews.length) { tidyRows(); return; }
+      d.reviews = d.reviews.filter(function(rv){ return rv.text && rv.text.trim().length >= 60; });
+      if (!d.reviews.length) { tidyRows(); return; }
       var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
       var star = '<svg class="ic" width="14" height="14"><use href="#ic-star"/></svg>';
-      grid.innerHTML = d.reviews.map(function(rv){
-        var stars = new Array(Math.max(1, Math.min(5, rv.rating || 5)) + 1).join(star);
-        var avatar = rv.authorPhoto
-          ? '<img class="avatar-img" src="' + esc(rv.authorPhoto) + '" alt="" loading="lazy" referrerpolicy="no-referrer">'
-          : '<span class="avatar" style="background:#6E5A3E">' + esc((rv.authorName || '?').charAt(0)) + '</span>';
-        var loc = 'Richmond &amp; Delta' + (rv.relativeTime ? ' &middot; ' + esc(rv.relativeTime) : '');
-        return '<div class="revd"><div class="revd-head">' + avatar + '<div><b>' + esc(rv.authorName) + '</b><span class="loc">' + loc + '</span></div><svg class="ic gmark" width="18" height="18"><use href="#ic-google"/></svg></div><div class="stars-row">' + stars + '</div><p>"' + esc(rv.text) + '"</p></div>';
-      }).join('');
       var names = d.reviews.map(function(rv){ return (rv.authorName || '').trim().toLowerCase(); });
-      document.querySelectorAll('.rev-grid-dark:not(#live-grid) .revd b').forEach(function(b){
+      grid.querySelectorAll('.revd b').forEach(function(b){
         if (names.indexOf(b.textContent.trim().toLowerCase()) !== -1) {
           var card = b.closest('.revd');
           if (card) card.parentNode.removeChild(card);
         }
       });
-      document.getElementById('live-reviews').hidden = false;
+      var html = d.reviews.map(function(rv){
+        var stars = new Array(Math.max(1, Math.min(5, rv.rating || 5)) + 1).join(star);
+        var avatar = rv.authorPhoto
+          ? '<img class="avatar-img" src="' + esc(rv.authorPhoto) + '" alt="" loading="lazy" referrerpolicy="no-referrer">'
+          : '<span class="avatar" style="background:#6E5A3E">' + esc((rv.authorName || '?').charAt(0)) + '</span>';
+        return '<div class="revd"><div class="revd-head">' + avatar + '<div><b>' + esc(rv.authorName) + '</b><span class="loc">Google review</span></div><svg class="ic gmark" width="18" height="18"><use href="#ic-google"/></svg></div><div class="stars-row">' + stars + '</div><p>"' + esc(rv.text) + '"</p></div>';
+      }).join('');
+      grid.insertAdjacentHTML('afterbegin', html);
+      var note = document.getElementById('live-note');
+      if (note) note.hidden = false;
+      tidyRows();
     }).catch(function(){});
   })();
 </script>
