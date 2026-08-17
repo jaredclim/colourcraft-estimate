@@ -410,3 +410,23 @@ a.rating-link:hover{text-decoration:underline;text-decoration-color:var(--gold);
 .avatar-img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .live-note{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.65);margin:0 0 18px}
 #live-reviews{margin-bottom:28px}
+
+/* Why Colour Craft list (homepage) */
+.why-list{display:grid;gap:20px}
+.why-item h3{font-size:17px;line-height:24px;font-weight:900;margin-bottom:5px;color:var(--dark)}
+.why-item p{color:var(--text-soft);font-size:16px;line-height:25px;margin:0}
+#why .owner-in{align-items:flex-start;gap:36px}
+#why .why-photo{flex:0 0 260px}
+#why .owner-photo{width:260px;height:320px;object-fit:cover;object-position:center 22%;border-radius:4px}
+#why .why-cap{margin-top:12px}
+#why .why-cap b{display:block;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:var(--dark)}
+#why .why-cap span{display:block;font-size:13px;color:var(--text-soft);margin-top:2px}
+#why h2{margin-bottom:26px}
+@media (max-width:767px){
+  #why .owner-in{gap:22px}
+  #why .why-photo{flex:none;width:100%}
+  #why .owner-photo{width:100%;height:240px}
+  .why-list{gap:18px}
+  .why-item h3{font-size:16px;line-height:22px}
+  .why-item p{font-size:15px;line-height:23px}
+}
