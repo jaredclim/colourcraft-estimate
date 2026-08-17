@@ -700,11 +700,12 @@ a.rating-link:hover{text-decoration:underline;text-decoration-color:var(--gold);
     if (keep.length) {
       document.querySelectorAll('a.dj-link').forEach(function(a){ a.href = a.href + '&' + keep.join('&'); });
     }
-    var geo = (params.get('geo') || '').toLowerCase();
-    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.'};
+    var geo = (params.get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
+    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};
     if (geoNames[geo]) {
       var line = document.getElementById('geo-line');
       if (line) line.textContent = geoNames[geo];
+      document.title = 'House Painters in ' + geoNames[geo].replace(/\.$/, '') + ', BC | Colour Craft Painting';
     }
     if (geo === 'delta' || geo === 'ladner' || geo === 'tsawwassen') {
       var workGrid = document.querySelector('#work .grid3');
