@@ -877,8 +877,8 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
       if (!grid) return;
       var cards = [].slice.call(grid.querySelectorAll('.revd'));
       cards.forEach(function(c){ c.style.display = ''; });
-      var firstTop = cards.length ? Math.round(cards[0].getBoundingClientRect().top) : 0;
-      var cols = cards.filter(function(c){ return Math.round(c.getBoundingClientRect().top) === firstTop; }).length || 1;
+      var tracks = getComputedStyle(grid).gridTemplateColumns || '';
+      var cols = tracks.split(' ').filter(function(x){ return x && x !== 'none'; }).length || 1;
       var extra = cards.length % cols;
       if (extra) cards.slice(cards.length - extra).forEach(function(c){ c.style.display = 'none'; });
     };
