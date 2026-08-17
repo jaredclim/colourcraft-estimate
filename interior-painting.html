@@ -662,8 +662,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
         <div class="sec-eyebrow">About This Service</div>
         <h2>Professional Interior House Painting</h2>
         <p>Your home should be a place where you feel comfortable and proud. Fresh paint changes the feel of a room. Having the right crew in your home makes the difference between a stressful project and a smooth one. We paint interiors that are smooth, clean, and respectful of your daily life. Whether you want to brighten up a single room or give your entire house a fresh look, we handle the hard work so you can just enjoy the results. We protect your floors, furniture, and belongings, and clean up every day before we leave.</p>
-        <p><b>Where we work:</b> all of Richmond including Seafair, Steveston, Broadmoor and Quilchena, plus Ladner, Tsawwassen, Delta and North Delta.</p>
-
+        <p><b>Where we work:</b> all of Richmond including Seafair, Steveston, Broadmoor and Quilchena, plus Ladner, Tsawwassen, Delta and North Delta.</p>        
         <div class="svc-cards">
           <div class="svc-card">
             <div class="svc-card-img"><img src="img/svc-int-wall.webp" alt="Freshly painted blue hallway with white trim" loading="lazy" width="760" height="750"></div>
@@ -838,8 +837,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
     <div class="wrap foot-grid">
       <div>
         <img src="img/logo.webp" alt="Colour Craft Painting" width="207" height="120">
-        <p>Professional painting in Richmond and Delta, BC. Serving Steveston, Seafair, Broadmoor, Terra Nova, Ladner, Tsawwassen and North Delta.</p>
-      </div>
+        <p>Professional painting in Richmond and Delta, BC. Serving Steveston, Seafair, Broadmoor, Terra Nova, Ladner, Tsawwassen and North Delta.</p>              </div>
       <div>
         <h4>Services</h4>
         <a href="/exterior-painting">Exterior House Painting</a>
@@ -881,8 +879,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
       document.querySelectorAll('a.dj-link').forEach(function(a){ a.href = a.href + '&' + keep.join('&'); });
     }
     var geo = (params.get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
-    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};
-    if (geoNames[geo]) {
+    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};        if (geoNames[geo]) {
       var line = document.getElementById('geo-line');
       if (line) line.textContent = geoNames[geo];
       document.title = 'House Painters in ' + geoNames[geo].replace(/\.$/, '') + ', BC | Colour Craft Painting';
@@ -994,7 +991,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
       ladner:     { head: 'Our Work in Delta',      set: ['dick', 'amanda', 'andy'] },
       northdelta: { head: 'Our Work in Delta',      set: ['denisse', 'amanda', 'andy'] }
     };
-    var geo = (new URLSearchParams(location.search).get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
+        var geo = (new URLSearchParams(location.search).get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
     var cfg = SETS[geo];
     if (!cfg) return;
     var head = document.getElementById('work-head');

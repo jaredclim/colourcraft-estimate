@@ -648,8 +648,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
 <section class="tight-b">
   <div class="wrap">
     <div class="sec-eyebrow">Recent Projects</div>
-    <h2>Every project below is a real home in Richmond or Delta</h2>
-    <p class="lede">Prices show the range each finished project landed in. Your home gets its own fixed price, in writing.</p>
+    <h2>Every project below is a real home in Richmond or Delta</h2>    <p class="lede">Prices show the range each finished project landed in. Your home gets its own fixed price, in writing.</p>
 
     <div class="grid3">
 <div class="card">
@@ -1024,8 +1023,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
     <div class="wrap foot-grid">
       <div>
         <img src="img/logo.webp" alt="Colour Craft Painting" width="207" height="120">
-        <p>Professional painting in Richmond and Delta, BC. Serving Steveston, Seafair, Broadmoor, Terra Nova, Ladner, Tsawwassen and North Delta.</p>
-      </div>
+        <p>Professional painting in Richmond and Delta, BC. Serving Steveston, Seafair, Broadmoor, Terra Nova, Ladner, Tsawwassen and North Delta.</p>              </div>
       <div>
         <h4>Services</h4>
         <a href="/exterior-painting">Exterior House Painting</a>
@@ -1067,8 +1065,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
       document.querySelectorAll('a.dj-link').forEach(function(a){ a.href = a.href + '&' + keep.join('&'); });
     }
     var geo = (params.get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
-    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};
-    if (geoNames[geo]) {
+    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};        if (geoNames[geo]) {
       var line = document.getElementById('geo-line');
       if (line) line.textContent = geoNames[geo];
       document.title = 'House Painters in ' + geoNames[geo].replace(/\.$/, '') + ', BC | Colour Craft Painting';
@@ -1180,7 +1177,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
       ladner:     { head: 'Our Work in Delta',      set: ['dick', 'amanda', 'andy'] },
       northdelta: { head: 'Our Work in Delta',      set: ['denisse', 'amanda', 'andy'] }
     };
-    var geo = (new URLSearchParams(location.search).get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
+        var geo = (new URLSearchParams(location.search).get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
     var cfg = SETS[geo];
     if (!cfg) return;
     var head = document.getElementById('work-head');

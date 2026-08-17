@@ -694,10 +694,8 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
       <img class="owner-photo" src="img/jared3.webp" alt="Jared Lim, franchise owner of Colour Craft Painting Richmond and Delta" loading="lazy" width="600" height="600">
       <div>
         <h2>Jared Lim</h2>
-        <div class="role">Franchise Owner &middot; Richmond, Delta and Surrounding Region</div>
-        <p>I was born and raised in Richmond, and I have been building and leading service businesses for over a decade. I began in the painting industry in 2012 as a College Pro Painters franchise owner, and in my early twenties built one of the top performing franchises in that company's 45 year history, completing hundreds of projects.</p>
-        <p>After several years leading sales teams and coaching business owners, I came back to painting with Colour Craft. I run the estimates in Richmond and Delta myself, so the person who quotes your home is the person accountable for it. My focus is delivering a great experience on every project, with clear communication, organized job sites, and a high standard of work from start to finish.</p>
-        <p>The email at the bottom of this page comes straight to me.</p>
+        <div class="role">Franchise Owner &middot; Richmond, Delta and Surrounding Region</div>                <p>I was born and raised in Richmond, and I have been building and leading service businesses for over a decade. I began in the painting industry in 2012 as a College Pro Painters franchise owner, and in my early twenties built one of the top performing franchises in that company's 45 year history, completing hundreds of projects.</p>
+        <p>After several years leading sales teams and coaching business owners, I came back to painting with Colour Craft. I run the estimates in Richmond and Delta myself, so the person who quotes your home is the person accountable for it. My focus is delivering a great experience on every project, with clear communication, organized job sites, and a high standard of work from start to finish.</p>                <p>The email at the bottom of this page comes straight to me.</p>
       </div>
     </div>
   </div>
@@ -821,8 +819,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
     <div class="wrap foot-grid">
       <div>
         <img src="img/logo.webp" alt="Colour Craft Painting" width="207" height="120">
-        <p>Professional painting in Richmond and Delta, BC. Serving Steveston, Seafair, Broadmoor, Terra Nova, Ladner, Tsawwassen and North Delta.</p>
-      </div>
+        <p>Professional painting in Richmond and Delta, BC. Serving Steveston, Seafair, Broadmoor, Terra Nova, Ladner, Tsawwassen and North Delta.</p>              </div>
       <div>
         <h4>Services</h4>
         <a href="/exterior-painting">Exterior House Painting</a>
@@ -864,8 +861,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
       document.querySelectorAll('a.dj-link').forEach(function(a){ a.href = a.href + '&' + keep.join('&'); });
     }
     var geo = (params.get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
-    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};
-    if (geoNames[geo]) {
+    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};        if (geoNames[geo]) {
       var line = document.getElementById('geo-line');
       if (line) line.textContent = geoNames[geo];
       document.title = 'House Painters in ' + geoNames[geo].replace(/\.$/, '') + ', BC | Colour Craft Painting';
@@ -977,7 +973,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
       ladner:     { head: 'Our Work in Delta',      set: ['dick', 'amanda', 'andy'] },
       northdelta: { head: 'Our Work in Delta',      set: ['denisse', 'amanda', 'andy'] }
     };
-    var geo = (new URLSearchParams(location.search).get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
+        var geo = (new URLSearchParams(location.search).get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
     var cfg = SETS[geo];
     if (!cfg) return;
     var head = document.getElementById('work-head');

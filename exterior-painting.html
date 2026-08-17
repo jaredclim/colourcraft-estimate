@@ -677,7 +677,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
             <div class="svc-card-img"><img src="img/svc-ext-stucco.webp" alt="Completed acrylic stucco exterior on a Seafair home in Richmond, painted by Colour Craft Painting" loading="lazy" width="760" height="570"></div>
             <div>
               <h3>Brick &amp; Masonry Painting</h3>
-              <p>Masonry and stucco each get the coating they actually need. On brick we use breathable masonry primers and topcoats that flex with the surface and let trapped moisture escape. On acrylic stucco, a premium exterior product like SuperPaint Flat gives the hide and colour retention these surfaces demand. Our Seafair project used exactly this approach across the siding, fascia and masonry fence.</p>
+              <p>Masonry and stucco each get the coating they actually need. On brick we use breathable masonry primers and topcoats that flex with the surface and let trapped moisture escape. On acrylic stucco, a premium exterior product like SuperPaint Flat gives the hide and colour retention these surfaces demand. One recent project used exactly this approach across the siding, fascia and masonry fence.</p>
               <a class="svc-link dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/?f=form-02776504">Request a Free Estimate <span aria-hidden="true">&rarr;</span></a>
             </div>
           </div>
@@ -719,8 +719,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
           </div>
         </div>
 
-        <p style="margin-top:8px"><b>Where we work:</b> all of Richmond including Seafair, Steveston, Broadmoor and Terra Nova, plus Ladner, Tsawwassen, Delta and North Delta.</p>
-
+        <p style="margin-top:8px"><b>Where we work:</b> all of Richmond including Seafair, Steveston, Broadmoor and Terra Nova, plus Ladner, Tsawwassen, Delta and North Delta.</p>        
         <div class="cta-band">
           <p>Every home on this page started with a free estimate.<span>Detailed written quote with photos, usually on the spot of the visit.</span></p>
           <a class="btn big dj-link" href="https://colourcraftpaintingrichmonddelta.dripjobs.com/?f=form-02776504">Book Free Estimate</a>
@@ -773,10 +772,8 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
         <div style="margin-top:18px"><a class="gold-link" href="/our-work">See all our projects &rarr;</a></div>
 
         <div class="proof-quote" style="margin:36px 0 0">
-          <div class="pq-label">From the Seafair project</div>
-          <p>"From our opening estimate through to successful conclusion of the painting of our exterior luxury class home Jared and his team showed utmost professionalism, excellent communication and a very high level of experience and integrity!"</p>
-          <div class="pq-who">Raymond &middot; Seafair, Richmond</div>
-        </div>
+          <div class="pq-label">From the Seafair project</div>          <p>"From our opening estimate through to successful conclusion of the painting of our exterior luxury class home Jared and his team showed utmost professionalism, excellent communication and a very high level of experience and integrity!"</p>
+          <div class="pq-who">Raymond &middot; Seafair, Richmond</div>        </div>
 
         <div class="cta-band">
           <p>Want a quote like this for your home?<span>Free on-site estimate. Detailed written quote with photos, usually on the spot.</span></p>
@@ -914,8 +911,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
     <div class="wrap foot-grid">
       <div>
         <img src="img/logo.webp" alt="Colour Craft Painting" width="207" height="120">
-        <p>Professional painting in Richmond and Delta, BC. Serving Steveston, Seafair, Broadmoor, Terra Nova, Ladner, Tsawwassen and North Delta.</p>
-      </div>
+        <p>Professional painting in Richmond and Delta, BC. Serving Steveston, Seafair, Broadmoor, Terra Nova, Ladner, Tsawwassen and North Delta.</p>              </div>
       <div>
         <h4>Services</h4>
         <a href="/exterior-painting">Exterior House Painting</a>
@@ -957,8 +953,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
       document.querySelectorAll('a.dj-link').forEach(function(a){ a.href = a.href + '&' + keep.join('&'); });
     }
     var geo = (params.get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
-    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};
-    if (geoNames[geo]) {
+    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};        if (geoNames[geo]) {
       var line = document.getElementById('geo-line');
       if (line) line.textContent = geoNames[geo];
       document.title = 'House Painters in ' + geoNames[geo].replace(/\.$/, '') + ', BC | Colour Craft Painting';
@@ -1070,7 +1065,7 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
       ladner:     { head: 'Our Work in Delta',      set: ['dick', 'amanda', 'andy'] },
       northdelta: { head: 'Our Work in Delta',      set: ['denisse', 'amanda', 'andy'] }
     };
-    var geo = (new URLSearchParams(location.search).get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
+        var geo = (new URLSearchParams(location.search).get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
     var cfg = SETS[geo];
     if (!cfg) return;
     var head = document.getElementById('work-head');

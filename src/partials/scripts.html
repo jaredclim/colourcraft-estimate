@@ -9,7 +9,8 @@
       document.querySelectorAll('a.dj-link').forEach(function(a){ a.href = a.href + '&' + keep.join('&'); });
     }
     var geo = (params.get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
-    var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};
+    <!--RD-->var geoNames = {ladner:'Ladner.', tsawwassen:'Tsawwassen.', steveston:'Steveston.', richmond:'Richmond.', delta:'Delta.', northdelta:'North Delta.'};<!--/RD-->
+    <!--SSWR-->var geoNames = {southsurrey:'South Surrey.', whiterock:'White Rock.', grandviewheights:'Grandview Heights.', morganheights:'Morgan Heights.', oceanpark:'Ocean Park.', crescentbeach:'Crescent Beach.', rosemaryheights:'Rosemary Heights.'};<!--/SSWR-->
     if (geoNames[geo]) {
       var line = document.getElementById('geo-line');
       if (line) line.textContent = geoNames[geo];
@@ -114,7 +115,7 @@
       diane:   ['diane',   'Tsawwassen &middot; Delta', 'Full Exterior Repaint', 'Colour-matched full repaint']
     };
     var SINGLE = { markw: 1, dick: 1, kelian: 1, monika: 1 };
-    var SETS = {
+<!--RD-->    var SETS = {
       richmond:   { head: 'Our Work in Richmond',   set: ['raymond', 'mumtaz', 'church'] },
       steveston:  { head: 'Our Work in Steveston',  set: ['larry', 'mumtaz', 'markw'] },
       delta:      { head: 'Our Work in Delta',      set: ['amanda', 'kathy', 'andy'] },
@@ -122,6 +123,8 @@
       ladner:     { head: 'Our Work in Delta',      set: ['dick', 'amanda', 'andy'] },
       northdelta: { head: 'Our Work in Delta',      set: ['denisse', 'amanda', 'andy'] }
     };
+<!--/RD-->
+    <!--SSWR-->    var SETS = {};<!--/SSWR-->
     var geo = (new URLSearchParams(location.search).get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
     var cfg = SETS[geo];
     if (!cfg) return;
