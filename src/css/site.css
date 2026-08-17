@@ -250,12 +250,18 @@ footer{background:var(--dark);color:rgba(255,255,255,.7);font-size:14px}
   .grid3,.grid2,.check-grid,.contact-grid{grid-template-columns:1fr}
   .stat-grid.three{grid-template-columns:1fr}
   ul.two-col{columns:1}
-  .ba{grid-template-columns:1fr;grid-template-rows:auto auto;aspect-ratio:auto}
-  .ba img{height:230px}
-  .ba-chip.after{right:auto;left:10px;top:calc(50% + 10px)}
+  .ba{grid-template-columns:1fr 1fr;grid-template-rows:auto;aspect-ratio:auto}
+  .ba.single{grid-template-columns:1fr}
+  .ba img{height:150px}
+  .ba.single img{height:210px}
+  .ba-chip{font-size:10px;padding:3px 7px}
 
   .steps{grid-template-columns:1fr;gap:26px}
   .foot-grid{grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+  .thinbar-in{flex-direction:column;align-items:stretch;text-align:center;gap:14px;padding:26px 0}
+  .thinbar span{font-size:17px;line-height:24px}
+  .thinbar{border-bottom:1px solid rgba(255,255,255,.14)}
+  .thinbar .btn{width:100%;padding:14px 8px}
   footer{padding-top:40px}
   .band-gold{padding:48px 0 56px}
   .step::after{display:none}
