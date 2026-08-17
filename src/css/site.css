@@ -430,3 +430,9 @@ a.rating-link:hover{text-decoration:underline;text-decoration-color:var(--gold);
   .why-item h3{font-size:16px;line-height:22px}
   .why-item p{font-size:15px;line-height:23px}
 }
+
+/* Reviews block, light treatment matching the main site */
+#reviews .rev .where{display:flex;align-items:center;gap:7px}
+#reviews .rev .where .gmark{flex-shrink:0}
+.read-all{margin-top:26px}
+.read-all a{font-family:'Barlow',sans-serif;font-size:13px;font-weight:700;letter-spacing:.9px;text-transform:uppercase}
