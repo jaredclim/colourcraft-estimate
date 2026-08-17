@@ -455,3 +455,16 @@ a.rating-link:hover{text-decoration:underline;text-decoration-color:var(--gold);
   .owner-strip{flex-wrap:wrap;gap:14px}
   .owner-strip .btn{margin-left:0;width:100%}
 }
+
+/* Full-bleed photo band (visual break between text sections) */
+.photo-band{position:relative;height:280px;background-image:url('img/crew-wide.webp');background-size:cover;background-position:center 62%;display:flex;align-items:flex-end}
+.photo-band::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.18) 0%,rgba(10,10,10,.62) 100%)}
+.photo-band .wrap{position:relative;z-index:1;padding-bottom:24px}
+.photo-band p{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:900;color:var(--white);margin:0;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+@media (max-width:767px){ .photo-band{height:200px} .photo-band p{font-size:17px} }
+
+/* Process on dark */
+section.dark-band .step h3,section.dark-band .step .n{color:var(--white)}
+section.dark-band .step p{color:rgba(255,255,255,.72)}
+section.dark-band .sec-eyebrow{color:var(--gold)}
+section.dark-band .step::after{background:rgba(255,255,255,.18)}
