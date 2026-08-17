@@ -516,6 +516,14 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
 #reviews .rev .praised{position:absolute;top:21px;right:18px;margin:0;padding:5px 11px;line-height:14px}
 #reviews .rev .stars-row{margin-bottom:10px}
 
+/* Pricing list */
+.price-list{display:grid;gap:0}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:12px 0;border-bottom:1px solid var(--border)}
+.price-row:last-child{border-bottom:none}
+.price-row span{color:var(--text);font-size:16px}
+.price-row b{font-family:'Montserrat',sans-serif;font-weight:900;font-size:16px;white-space:nowrap}
+@media (max-width:767px){ .price-row{font-size:15px} .price-row b{font-size:15px} }
+
 </style>
 </head>
 <body>
