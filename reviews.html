@@ -769,5 +769,58 @@ a.rating-link:hover{text-decoration:underline;text-decoration-color:var(--gold);
   })();
 </script>
 
+<script>
+  // Per-geo project sets. Heading names the widest geography we can honestly
+  // fill; cards lead with the nearest real project.
+  (function(){
+    var P = {
+      raymond: ['raymond', 'Seafair &middot; Richmond', 'Luxury Stucco Exterior', 'Colour-matched full exterior'],
+      amanda:  ['amanda',  'Tsawwassen &middot; Delta', 'Full Exterior Repaint', 'Full exterior repaint'],
+      kathy:   ['kathy',   'Tsawwassen &middot; Delta', 'Full Exterior Repaint', 'Colour-matched full repaint'],
+      andy:    ['andy',    'Tsawwassen &middot; Delta', 'Full Exterior Repaint', 'Full exterior repaint'],
+      mumtaz:  ['mumtaz',  'Steveston &middot; Richmond', 'Full Exterior Repaint', 'Two-tone full exterior'],
+      larry:   ['larry',   'Steveston &middot; Richmond', 'Log Home Re-Stain', 'Log siding re-stained'],
+      markw:   ['markwong','Steveston &middot; Richmond', 'Exterior Trim Repaint', 'Colour-matched trim'],
+      church:  ['church',  'Richmond', 'Interior Repaint', 'Interior walls and ceilings'],
+      dick:    ['dick',    'Ladner &middot; Delta', 'Fascia &amp; Trim', 'Colour-matched fascia and trim'],
+      denisse: ['denisse', 'North Delta', 'Fascia &amp; Shutters', 'Partial trim job'],
+      diane:   ['diane',   'Tsawwassen &middot; Delta', 'Full Exterior Repaint', 'Colour-matched full repaint']
+    };
+    var SINGLE = { markw: 1, dick: 1, kelian: 1, monika: 1 };
+    var SETS = {
+      richmond:   { head: 'Our Work in Richmond',   set: ['raymond', 'mumtaz', 'church'] },
+      steveston:  { head: 'Our Work in Steveston',  set: ['larry', 'mumtaz', 'markw'] },
+      delta:      { head: 'Our Work in Delta',      set: ['amanda', 'kathy', 'andy'] },
+      tsawwassen: { head: 'Our Work in Tsawwassen', set: ['amanda', 'kathy', 'andy'] },
+      ladner:     { head: 'Our Work in Delta',      set: ['dick', 'amanda', 'andy'] },
+      northdelta: { head: 'Our Work in Delta',      set: ['denisse', 'amanda', 'andy'] }
+    };
+    var geo = (new URLSearchParams(location.search).get('geo') || '').toLowerCase().replace(/[^a-z]/g, '');
+    var cfg = SETS[geo];
+    if (!cfg) return;
+    var head = document.getElementById('work-head');
+    if (head) head.innerHTML = cfg.head;
+    cfg.set.forEach(function(key, i){
+      var d = P[key], card = document.querySelector('.card[data-slot="' + i + '"]');
+      if (!d || !card) return;
+      var ba = card.querySelector('.ba'), b = ba.querySelector('[data-role="b"]'), a = ba.querySelector('[data-role="a"]');
+      if (SINGLE[key]) {
+        ba.classList.add('single');
+        b.remove();
+        ba.querySelector('.ba-chip.before') && ba.querySelector('.ba-chip.before').remove();
+        ba.querySelector('.ba-chip.after') && ba.querySelector('.ba-chip.after').remove();
+      } else {
+        b.src = 'img/work/' + d[0] + '-b.webp';
+        b.alt = d[2] + ' before, ' + d[1].replace('&middot;', '-');
+      }
+      a.src = 'img/work/' + d[0] + '-a.webp';
+      a.alt = d[2] + ' after by Colour Craft Painting';
+      card.querySelector('[data-role="tag"]').innerHTML = d[1];
+      card.querySelector('[data-role="title"]').innerHTML = d[2];
+      card.querySelector('[data-role="scope"]').innerHTML = d[3];
+    });
+  })();
+</script>
+
 </body>
 </html>
