@@ -505,6 +505,8 @@ section.dark-band .step::after{background:rgba(255,255,255,.18)}
 
 /* Mobile overrides that must win on specificity/order (2026-08-17) */
 @media (max-width:767px){
+  .contact-grid{grid-template-columns:1fr!important;gap:28px}
+  .svc-layout{grid-template-columns:1fr!important}
   .promise-list.grid2x2{grid-template-columns:1fr;gap:14px}
   .svc-side .btn,.svc-side .btn.dark{padding:14px 10px;font-size:12.5px;letter-spacing:.4px}
 }
