@@ -400,7 +400,7 @@ a.contact-row:hover{border-color:var(--gold)}
   .svc-hero{min-height:auto}
   .svc-hero-in{padding:56px 0 40px}
   .svc-hero-bg::after{background:linear-gradient(180deg,rgba(10,10,10,.74),rgba(10,10,10,.66) 55%,rgba(10,10,10,.8))}
-  .svc-hero h1{font-size:38px;line-height:42px}
+  .svc-hero h1{font-size:31px;line-height:36px}
   .crumb{font-size:13px}
   .svc-card{grid-template-columns:1fr;gap:20px}
   .svc-card:nth-child(even) .svc-card-img{order:0}
