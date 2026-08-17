@@ -37,10 +37,18 @@ const NAV = [
 ];
 
 function buildNav(currentHref) {
+  const services = NAV.filter(n => n.group === 'Services');
+  const top = NAV.filter(n => !n.group);
   const isCurrent = h => h === currentHref ? ' aria-current="page" class="is-current"' : '';
-  const short = { '/exterior-painting': 'Exterior', '/interior-painting': 'Interior', '/deck-fence-painting': 'Deck & Fence' };
+  const serviceOpen = services.some(s => s.href === currentHref) ? ' is-current' : '';
   return `<nav class="nav">
-        ${NAV.map(n => `<a href="${n.href}"${isCurrent(n.href)}>${short[n.href] || n.label}</a>`).join('\n        ')}
+        <div class="nav-drop">
+          <button type="button" class="nav-trigger${serviceOpen}" aria-expanded="false">Services<svg class="ic" width="12" height="12" aria-hidden="true"><use href="#ic-chevdown"/></svg></button>
+          <div class="nav-menu">
+            ${services.map(s => `<a href="${s.href}"${isCurrent(s.href)}>${s.label}</a>`).join('\n            ')}
+          </div>
+        </div>
+        ${top.map(n => `<a href="${n.href}"${isCurrent(n.href)}>${n.label}</a>`).join('\n        ')}
       </nav>`;
 }
 
