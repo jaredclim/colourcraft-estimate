@@ -100,6 +100,11 @@ function applySswr(html) {
   h = h.replace(/(Google r|r)eviews in South Surrey (&amp; |& |and )White Rock/gi, (m, p1) => p1 + 'eviews')
        .replace(/Google Reviews in South Surrey (&amp; |& |and )White Rock/g, 'Google Reviews');
 
+  // the hero rating label wraps the territory in a nowrap span, so scrub across tags;
+  // the reviews are the R&D Google profile and must never be claimed as SSWR reviews
+  h = h.replace(/Google [Rr]eviews in (<span[^>]*>)?South Surrey (&amp;|&|and) White Rock(<\/span>)?/g, 'Google reviews')
+       .replace(/Reviews of Colour Craft Painting in South Surrey &(amp;)? White Rock/g, 'Reviews of Colour Craft Painting');
+
   // photo alt text and the geo project map carry R&D place names — scrub them
   h = h.replace(/alt="[^"]*"/g, (m) => m
         .replace(/\b(Seafair|Steveston|Tsawwassen|Ladner|North Delta|Richmond|Delta)\b,?\s*/g, '')
@@ -121,6 +126,10 @@ function applySswr(html) {
   h = h.replace(/A standard full exterior repaint in South Surrey and White Rock runs/g,
                 'A standard full exterior repaint runs')
        .replace(/Average project costs in South Surrey &amp; White Rock/g, 'Average project costs');
+
+  // weak "part of the territory" line -> strong true owner-run line
+  h = h.replace(/South Surrey and White Rock is part of the territory our crews work in, and the owner sets the standard every crew works to\./g,
+                'South Surrey and White Rock is owner-run. The owner sets the standard every crew works to, and answers for the work.');
 
   // section headings that would imply local projects
   h = h.replace(/Our Work in South Surrey &amp; White Rock/g, 'Our Work')
